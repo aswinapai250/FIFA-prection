@@ -60,7 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 4. Cache the simulation results for 24 hours using st.cache_data
-@st.cache_data(ttl=24 * 3600)
+@st.cache_data(ttl=1)
 def run_simulation_pipeline():
     import os
     os.environ["FOOTBALL_API_KEY"] = st.secrets["FOOTBALL_API_KEY"]
@@ -71,7 +71,7 @@ def run_simulation_pipeline():
     
     # Run fetch_data logic (safely, fallback to local file if internet/API fails)
     try:
-        #fet   ch_data.main()
+        #fetch_data.main()
         pass
     except Exception as e:
         print(f"Warning: fetch_data failed ({e}). Using existing wc_matches.csv.")

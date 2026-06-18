@@ -205,7 +205,8 @@ def build_matchup_probabilities(model, feature_columns, profiles, h2h_lookup):
 
 
 
-
+    print(f"Curaçao vs France: {probabilities.get(('Curaçao', 'France'), 'NOT FOUND'):.4f}")
+    print(f"France vs Curaçao: {probabilities.get(('France', 'Curaçao'), 'NOT FOUND'):.4f}")
     return probabilities
 
 
