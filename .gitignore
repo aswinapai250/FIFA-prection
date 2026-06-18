@@ -1,0 +1,4 @@
+venv312/
+*.pkl
+__pycache__/
+.streamlit/secrets.toml
