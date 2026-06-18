@@ -19,7 +19,7 @@ RECENT_WINDOW = 10
 SIMULATIONS = 10000
 DRAW_LOW = 0.4
 DRAW_HIGH = 0.6
-RNG = np.random.default_rng()
+RNG = np.random.default_rng(42)
 
 # Official FIFA World Cup 2026 groups (December 2025 draw, playoffs resolved)
 GROUPS = {
