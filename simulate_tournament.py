@@ -8,8 +8,12 @@ import pandas as pd
 MODEL_FILE = "model.pkl"
 FEATURE_COLUMNS_FILE = "feature_columns.pkl"
 FEATURES_FILE = "wc_features_ranked.csv"
-MATCHES_FILE = "all_matches.csv"
-RANKINGS_FILE = "fifa_ranking.csv"
+import os
+_DIR = os.path.dirname(os.path.abspath(__file__))
+MATCHES_FILE = os.path.join(_DIR, "all_matches.csv")
+RANKINGS_FILE = os.path.join(_DIR, "fifa_ranking.csv")
+MODEL_FILE = os.path.join(_DIR, "model.pkl")
+FEATURE_COLUMNS_FILE = os.path.join(_DIR, "feature_columns.pkl")
 DEFAULT_RANK = 100
 RECENT_WINDOW = 10
 SIMULATIONS = 10000
