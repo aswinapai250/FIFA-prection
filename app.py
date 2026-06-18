@@ -91,6 +91,10 @@ def run_simulation_pipeline():
     probabilities = simulate_tournament.build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
     )
+    st.write("Spain vs Australia:", probabilities.get(("Spain", "Australia")))
+    st.write("Australia vs Spain:", probabilities.get(("Australia", "Spain")))
+    st.write("Argentina vs Jordan:", probabilities.get(("Argentina", "Jordan")))
+    st.write("France vs Curaçao:", probabilities.get(("France", "Curaçao")))
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}
