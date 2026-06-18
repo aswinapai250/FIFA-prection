@@ -1,0 +1,985 @@
+date,home_team,away_team,home_goals,away_goals,stage,year,winner
+1930-07-13,Belgium,United States,0.0,3.0,,1930,away
+1930-07-13,France,Mexico,4.0,1.0,,1930,home
+1930-07-14,Brazil,Yugoslavia,1.0,2.0,,1930,away
+1930-07-14,Peru,Romania,1.0,3.0,,1930,away
+1930-07-15,Argentina,France,1.0,0.0,,1930,home
+1930-07-16,Chile,Mexico,3.0,0.0,,1930,home
+1930-07-17,Bolivia,Yugoslavia,0.0,4.0,,1930,away
+1930-07-17,Paraguay,United States,0.0,3.0,,1930,away
+1930-07-18,Uruguay,Peru,1.0,0.0,,1930,home
+1930-07-19,Argentina,Mexico,6.0,3.0,,1930,home
+1930-07-19,Chile,France,1.0,0.0,,1930,home
+1930-07-20,Belgium,Paraguay,0.0,1.0,,1930,away
+1930-07-20,Bolivia,Brazil,0.0,4.0,,1930,away
+1930-07-21,Uruguay,Romania,4.0,0.0,,1930,home
+1930-07-22,Argentina,Chile,3.0,1.0,,1930,home
+1930-07-26,Argentina,United States,6.0,1.0,,1930,home
+1930-07-27,Uruguay,Yugoslavia,6.0,1.0,,1930,home
+1930-07-30,Uruguay,Argentina,4.0,2.0,,1930,home
+1934-05-27,Argentina,Sweden,2.0,3.0,,1934,away
+1934-05-27,Austria,France,3.0,2.0,,1934,home
+1934-05-27,Belgium,Germany,2.0,5.0,,1934,away
+1934-05-27,Brazil,Spain,1.0,3.0,,1934,away
+1934-05-27,Czechoslovakia,Romania,2.0,1.0,,1934,home
+1934-05-27,Egypt,Hungary,2.0,4.0,,1934,away
+1934-05-27,Italy,United States,7.0,1.0,,1934,home
+1934-05-27,Netherlands,Switzerland,2.0,3.0,,1934,away
+1934-05-31,Austria,Hungary,2.0,1.0,,1934,home
+1934-05-31,Czechoslovakia,Switzerland,3.0,2.0,,1934,home
+1934-05-31,Germany,Sweden,2.0,1.0,,1934,home
+1934-05-31,Italy,Spain,1.0,1.0,,1934,draw
+1934-06-01,Italy,Spain,1.0,0.0,,1934,home
+1934-06-03,Czechoslovakia,Germany,3.0,1.0,,1934,home
+1934-06-03,Italy,Austria,1.0,0.0,,1934,home
+1934-06-07,Austria,Germany,2.0,3.0,,1934,away
+1934-06-10,Italy,Czechoslovakia,2.0,1.0,,1934,home
+1938-06-04,Germany,Switzerland,1.0,1.0,,1938,draw
+1938-06-05,Brazil,Poland,6.0,5.0,,1938,home
+1938-06-05,Cuba,Romania,3.0,3.0,,1938,draw
+1938-06-05,Czechoslovakia,Netherlands,3.0,0.0,,1938,home
+1938-06-05,France,Belgium,3.0,1.0,,1938,home
+1938-06-05,Hungary,Indonesia,6.0,0.0,,1938,home
+1938-06-05,Italy,Norway,2.0,1.0,,1938,home
+1938-06-09,Cuba,Romania,2.0,1.0,,1938,home
+1938-06-09,Germany,Switzerland,2.0,4.0,,1938,away
+1938-06-12,Brazil,Czechoslovakia,1.0,1.0,,1938,draw
+1938-06-12,Cuba,Sweden,0.0,8.0,,1938,away
+1938-06-12,France,Italy,1.0,3.0,,1938,away
+1938-06-12,Hungary,Switzerland,2.0,0.0,,1938,home
+1938-06-14,Brazil,Czechoslovakia,2.0,1.0,,1938,home
+1938-06-16,Brazil,Italy,1.0,2.0,,1938,away
+1938-06-16,Hungary,Sweden,5.0,1.0,,1938,home
+1938-06-19,Brazil,Sweden,4.0,2.0,,1938,home
+1938-06-19,Hungary,Italy,2.0,4.0,,1938,away
+1950-06-24,Brazil,Mexico,4.0,0.0,,1950,home
+1950-06-25,Chile,England,0.0,2.0,,1950,away
+1950-06-25,Italy,Sweden,2.0,3.0,,1950,away
+1950-06-25,Spain,United States,3.0,1.0,,1950,home
+1950-06-25,Switzerland,Yugoslavia,0.0,3.0,,1950,away
+1950-06-28,Brazil,Switzerland,2.0,2.0,,1950,draw
+1950-06-28,Mexico,Yugoslavia,1.0,4.0,,1950,away
+1950-06-29,Chile,Spain,0.0,2.0,,1950,away
+1950-06-29,England,United States,0.0,1.0,,1950,away
+1950-06-29,Paraguay,Sweden,2.0,2.0,,1950,draw
+1950-07-01,Brazil,Yugoslavia,2.0,0.0,,1950,home
+1950-07-02,Bolivia,Uruguay,0.0,8.0,,1950,away
+1950-07-02,Chile,United States,5.0,2.0,,1950,home
+1950-07-02,England,Spain,0.0,1.0,,1950,away
+1950-07-02,Italy,Paraguay,2.0,0.0,,1950,home
+1950-07-02,Mexico,Switzerland,1.0,2.0,,1950,away
+1950-07-09,Brazil,Sweden,7.0,1.0,,1950,home
+1950-07-09,Spain,Uruguay,2.0,2.0,,1950,draw
+1950-07-13,Brazil,Spain,6.0,1.0,,1950,home
+1950-07-13,Sweden,Uruguay,2.0,3.0,,1950,away
+1950-07-16,Brazil,Uruguay,1.0,2.0,,1950,away
+1950-07-16,Spain,Sweden,1.0,3.0,,1950,away
+1954-06-16,Austria,Scotland,1.0,0.0,,1954,home
+1954-06-16,Brazil,Mexico,5.0,0.0,,1954,home
+1954-06-16,Czechoslovakia,Uruguay,0.0,2.0,,1954,away
+1954-06-16,France,Yugoslavia,0.0,1.0,,1954,away
+1954-06-17,Belgium,England,4.0,4.0,,1954,draw
+1954-06-17,Germany,Turkey,4.0,1.0,,1954,home
+1954-06-17,Hungary,South Korea,9.0,0.0,,1954,home
+1954-06-17,Switzerland,Italy,2.0,1.0,,1954,home
+1954-06-19,Austria,Czechoslovakia,5.0,0.0,,1954,home
+1954-06-19,Brazil,Yugoslavia,1.0,1.0,,1954,draw
+1954-06-19,France,Mexico,3.0,2.0,,1954,home
+1954-06-19,Scotland,Uruguay,0.0,7.0,,1954,away
+1954-06-20,Belgium,Italy,1.0,4.0,,1954,away
+1954-06-20,Germany,Hungary,3.0,8.0,,1954,away
+1954-06-20,South Korea,Turkey,0.0,7.0,,1954,away
+1954-06-20,Switzerland,England,0.0,2.0,,1954,away
+1954-06-23,Germany,Turkey,7.0,2.0,,1954,home
+1954-06-23,Switzerland,Italy,4.0,1.0,,1954,home
+1954-06-26,England,Uruguay,2.0,4.0,,1954,away
+1954-06-26,Switzerland,Austria,5.0,7.0,,1954,away
+1954-06-27,Brazil,Hungary,2.0,4.0,,1954,away
+1954-06-27,Germany,Yugoslavia,2.0,0.0,,1954,home
+1954-06-30,Austria,Germany,1.0,6.0,,1954,away
+1954-06-30,Hungary,Uruguay,4.0,2.0,,1954,home
+1954-07-03,Austria,Uruguay,3.0,1.0,,1954,home
+1954-07-04,Germany,Hungary,3.0,2.0,,1954,home
+1958-06-08,Argentina,Germany,1.0,3.0,,1958,away
+1958-06-08,Austria,Brazil,0.0,3.0,,1958,away
+1958-06-08,Czechoslovakia,Northern Ireland,0.0,1.0,,1958,away
+1958-06-08,England,Russia,2.0,2.0,,1958,draw
+1958-06-08,France,Paraguay,7.0,3.0,,1958,home
+1958-06-08,Hungary,Wales,1.0,1.0,,1958,draw
+1958-06-08,Scotland,Yugoslavia,1.0,1.0,,1958,draw
+1958-06-08,Sweden,Mexico,3.0,0.0,,1958,home
+1958-06-11,Argentina,Northern Ireland,3.0,1.0,,1958,home
+1958-06-11,Austria,Russia,0.0,2.0,,1958,away
+1958-06-11,Brazil,England,0.0,0.0,,1958,draw
+1958-06-11,Czechoslovakia,Germany,2.0,2.0,,1958,draw
+1958-06-11,France,Yugoslavia,2.0,3.0,,1958,away
+1958-06-11,Mexico,Wales,1.0,1.0,,1958,draw
+1958-06-11,Paraguay,Scotland,3.0,2.0,,1958,home
+1958-06-12,Sweden,Hungary,2.0,1.0,,1958,home
+1958-06-15,Argentina,Czechoslovakia,1.0,6.0,,1958,away
+1958-06-15,Austria,England,2.0,2.0,,1958,draw
+1958-06-15,Brazil,Russia,2.0,0.0,,1958,home
+1958-06-15,France,Scotland,2.0,1.0,,1958,home
+1958-06-15,Germany,Northern Ireland,2.0,2.0,,1958,draw
+1958-06-15,Hungary,Mexico,4.0,0.0,,1958,home
+1958-06-15,Paraguay,Yugoslavia,3.0,3.0,,1958,draw
+1958-06-15,Sweden,Wales,0.0,0.0,,1958,draw
+1958-06-17,Czechoslovakia,Northern Ireland,1.0,2.0,,1958,away
+1958-06-17,England,Russia,0.0,1.0,,1958,away
+1958-06-17,Hungary,Wales,1.0,2.0,,1958,away
+1958-06-19,Brazil,Wales,1.0,0.0,,1958,home
+1958-06-19,France,Northern Ireland,4.0,0.0,,1958,home
+1958-06-19,Germany,Yugoslavia,1.0,0.0,,1958,home
+1958-06-19,Sweden,Russia,2.0,0.0,,1958,home
+1958-06-24,Brazil,France,5.0,2.0,,1958,home
+1958-06-24,Sweden,Germany,3.0,1.0,,1958,home
+1958-06-28,France,Germany,6.0,3.0,,1958,home
+1958-06-29,Sweden,Brazil,2.0,5.0,,1958,away
+1962-05-30,Argentina,Bulgaria,1.0,0.0,,1962,home
+1962-05-30,Brazil,Mexico,2.0,0.0,,1962,home
+1962-05-30,Chile,Switzerland,3.0,1.0,,1962,home
+1962-05-30,Colombia,Uruguay,1.0,2.0,,1962,away
+1962-05-31,Czechoslovakia,Spain,1.0,0.0,,1962,home
+1962-05-31,England,Hungary,1.0,2.0,,1962,away
+1962-05-31,Germany,Italy,0.0,0.0,,1962,draw
+1962-05-31,Russia,Yugoslavia,2.0,0.0,,1962,home
+1962-06-02,Argentina,England,1.0,3.0,,1962,away
+1962-06-02,Brazil,Czechoslovakia,0.0,0.0,,1962,draw
+1962-06-02,Chile,Italy,2.0,0.0,,1962,home
+1962-06-02,Uruguay,Yugoslavia,1.0,3.0,,1962,away
+1962-06-03,Bulgaria,Hungary,1.0,6.0,,1962,away
+1962-06-03,Colombia,Russia,4.0,4.0,,1962,draw
+1962-06-03,Germany,Switzerland,2.0,1.0,,1962,home
+1962-06-03,Mexico,Spain,0.0,1.0,,1962,away
+1962-06-06,Argentina,Hungary,0.0,0.0,,1962,draw
+1962-06-06,Brazil,Spain,2.0,1.0,,1962,home
+1962-06-06,Chile,Germany,0.0,2.0,,1962,away
+1962-06-06,Russia,Uruguay,2.0,1.0,,1962,home
+1962-06-07,Bulgaria,England,0.0,0.0,,1962,draw
+1962-06-07,Colombia,Yugoslavia,0.0,5.0,,1962,away
+1962-06-07,Czechoslovakia,Mexico,1.0,3.0,,1962,away
+1962-06-07,Italy,Switzerland,3.0,0.0,,1962,home
+1962-06-10,Brazil,England,3.0,1.0,,1962,home
+1962-06-10,Chile,Russia,2.0,1.0,,1962,home
+1962-06-10,Czechoslovakia,Hungary,1.0,0.0,,1962,home
+1962-06-10,Germany,Yugoslavia,0.0,1.0,,1962,away
+1962-06-13,Chile,Brazil,2.0,4.0,,1962,away
+1962-06-13,Czechoslovakia,Yugoslavia,3.0,1.0,,1962,home
+1962-06-16,Chile,Yugoslavia,1.0,0.0,,1962,home
+1962-06-17,Brazil,Czechoslovakia,3.0,1.0,,1962,home
+1966-07-11,England,Uruguay,0.0,0.0,,1966,draw
+1966-07-12,Brazil,Bulgaria,2.0,0.0,,1966,home
+1966-07-12,Germany,Switzerland,5.0,0.0,,1966,home
+1966-07-12,North Korea,Russia,0.0,3.0,,1966,away
+1966-07-13,Argentina,Spain,2.0,1.0,,1966,home
+1966-07-13,Chile,Italy,0.0,2.0,,1966,away
+1966-07-13,France,Mexico,1.0,1.0,,1966,draw
+1966-07-13,Hungary,Portugal,1.0,3.0,,1966,away
+1966-07-15,Brazil,Hungary,1.0,3.0,,1966,away
+1966-07-15,Chile,North Korea,1.0,1.0,,1966,draw
+1966-07-15,France,Uruguay,1.0,2.0,,1966,away
+1966-07-15,Spain,Switzerland,2.0,1.0,,1966,home
+1966-07-16,Argentina,Germany,0.0,0.0,,1966,draw
+1966-07-16,Bulgaria,Portugal,0.0,3.0,,1966,away
+1966-07-16,England,Mexico,2.0,0.0,,1966,home
+1966-07-16,Italy,Russia,0.0,1.0,,1966,away
+1966-07-19,Argentina,Switzerland,2.0,0.0,,1966,home
+1966-07-19,Brazil,Portugal,1.0,3.0,,1966,away
+1966-07-19,Italy,North Korea,0.0,1.0,,1966,away
+1966-07-19,Mexico,Uruguay,0.0,0.0,,1966,draw
+1966-07-20,Bulgaria,Hungary,1.0,3.0,,1966,away
+1966-07-20,Chile,Russia,1.0,2.0,,1966,away
+1966-07-20,England,France,2.0,0.0,,1966,home
+1966-07-20,Germany,Spain,2.0,1.0,,1966,home
+1966-07-23,England,Argentina,1.0,0.0,,1966,home
+1966-07-23,Germany,Uruguay,4.0,0.0,,1966,home
+1966-07-23,Hungary,Russia,1.0,2.0,,1966,away
+1966-07-23,North Korea,Portugal,3.0,5.0,,1966,away
+1966-07-25,Germany,Russia,2.0,1.0,,1966,home
+1966-07-26,England,Portugal,2.0,1.0,,1966,home
+1966-07-28,Portugal,Russia,2.0,1.0,,1966,home
+1966-07-30,England,Germany,4.0,2.0,,1966,home
+1970-05-31,Mexico,Russia,0.0,0.0,,1970,draw
+1970-06-02,Bulgaria,Peru,2.0,3.0,,1970,away
+1970-06-02,England,Romania,1.0,0.0,,1970,home
+1970-06-02,Israel,Uruguay,0.0,2.0,,1970,away
+1970-06-03,Belgium,El Salvador,3.0,0.0,,1970,home
+1970-06-03,Brazil,Czechoslovakia,4.0,1.0,,1970,home
+1970-06-03,Germany,Morocco,2.0,1.0,,1970,home
+1970-06-03,Italy,Sweden,1.0,0.0,,1970,home
+1970-06-06,Belgium,Russia,1.0,4.0,,1970,away
+1970-06-06,Czechoslovakia,Romania,1.0,2.0,,1970,away
+1970-06-06,Italy,Uruguay,0.0,0.0,,1970,draw
+1970-06-06,Morocco,Peru,0.0,3.0,,1970,away
+1970-06-07,Brazil,England,1.0,0.0,,1970,home
+1970-06-07,Bulgaria,Germany,2.0,5.0,,1970,away
+1970-06-07,Israel,Sweden,1.0,1.0,,1970,draw
+1970-06-07,Mexico,El Salvador,4.0,0.0,,1970,home
+1970-06-10,Brazil,Romania,3.0,2.0,,1970,home
+1970-06-10,El Salvador,Russia,0.0,2.0,,1970,away
+1970-06-10,Germany,Peru,3.0,1.0,,1970,home
+1970-06-10,Sweden,Uruguay,1.0,0.0,,1970,home
+1970-06-11,Bulgaria,Morocco,1.0,1.0,,1970,draw
+1970-06-11,Czechoslovakia,England,0.0,1.0,,1970,away
+1970-06-11,Israel,Italy,0.0,0.0,,1970,draw
+1970-06-11,Mexico,Belgium,1.0,0.0,,1970,home
+1970-06-14,Brazil,Peru,4.0,2.0,,1970,home
+1970-06-14,England,Germany,2.0,3.0,,1970,away
+1970-06-14,Mexico,Italy,1.0,4.0,,1970,away
+1970-06-14,Russia,Uruguay,0.0,1.0,,1970,away
+1970-06-17,Brazil,Uruguay,3.0,1.0,,1970,home
+1970-06-17,Germany,Italy,3.0,4.0,,1970,away
+1970-06-20,Germany,Uruguay,1.0,0.0,,1970,home
+1970-06-21,Brazil,Italy,4.0,1.0,,1970,home
+1974-06-13,Brazil,Yugoslavia,0.0,0.0,,1974,draw
+1974-06-14,DR Congo,Scotland,0.0,2.0,,1974,away
+1974-06-14,German DR,Australia,2.0,0.0,,1974,home
+1974-06-14,Germany,Chile,1.0,0.0,,1974,home
+1974-06-15,Italy,Haiti,3.0,1.0,,1974,home
+1974-06-15,Poland,Argentina,3.0,2.0,,1974,home
+1974-06-15,Sweden,Bulgaria,0.0,0.0,,1974,draw
+1974-06-15,Uruguay,Netherlands,0.0,2.0,,1974,away
+1974-06-18,Chile,German DR,1.0,1.0,,1974,draw
+1974-06-18,Germany,Australia,3.0,0.0,,1974,home
+1974-06-18,Scotland,Brazil,0.0,0.0,,1974,draw
+1974-06-18,Yugoslavia,DR Congo,9.0,0.0,,1974,home
+1974-06-19,Argentina,Italy,1.0,1.0,,1974,draw
+1974-06-19,Bulgaria,Uruguay,1.0,1.0,,1974,draw
+1974-06-19,Haiti,Poland,0.0,7.0,,1974,away
+1974-06-19,Netherlands,Sweden,0.0,0.0,,1974,draw
+1974-06-22,Australia,Chile,0.0,0.0,,1974,draw
+1974-06-22,DR Congo,Brazil,0.0,3.0,,1974,away
+1974-06-22,Germany,German DR,0.0,1.0,,1974,away
+1974-06-22,Scotland,Yugoslavia,1.0,1.0,,1974,draw
+1974-06-23,Argentina,Haiti,4.0,1.0,,1974,home
+1974-06-23,Bulgaria,Netherlands,1.0,4.0,,1974,away
+1974-06-23,Poland,Italy,2.0,1.0,,1974,home
+1974-06-23,Sweden,Uruguay,3.0,0.0,,1974,home
+1974-06-26,Brazil,German DR,1.0,0.0,,1974,home
+1974-06-26,Germany,Yugoslavia,2.0,0.0,,1974,home
+1974-06-26,Netherlands,Argentina,4.0,0.0,,1974,home
+1974-06-26,Sweden,Poland,0.0,1.0,,1974,away
+1974-06-30,Argentina,Brazil,1.0,2.0,,1974,away
+1974-06-30,German DR,Netherlands,0.0,2.0,,1974,away
+1974-06-30,Germany,Sweden,4.0,2.0,,1974,home
+1974-06-30,Poland,Yugoslavia,2.0,1.0,,1974,home
+1974-07-03,Argentina,German DR,1.0,1.0,,1974,draw
+1974-07-03,Germany,Poland,1.0,0.0,,1974,home
+1974-07-03,Netherlands,Brazil,2.0,0.0,,1974,home
+1974-07-03,Sweden,Yugoslavia,2.0,1.0,,1974,home
+1974-07-06,Brazil,Poland,0.0,1.0,,1974,away
+1974-07-07,Germany,Netherlands,2.0,1.0,,1974,home
+1978-06-01,Germany,Poland,0.0,0.0,,1978,draw
+1978-06-02,Argentina,Hungary,2.0,1.0,,1978,home
+1978-06-02,France,Italy,1.0,2.0,,1978,away
+1978-06-02,Mexico,Tunisia,1.0,3.0,,1978,away
+1978-06-03,Austria,Spain,2.0,1.0,,1978,home
+1978-06-03,Brazil,Sweden,1.0,1.0,,1978,draw
+1978-06-03,Iran,Netherlands,0.0,3.0,,1978,away
+1978-06-03,Peru,Scotland,3.0,1.0,,1978,home
+1978-06-06,Argentina,France,2.0,1.0,,1978,home
+1978-06-06,Germany,Mexico,6.0,0.0,,1978,home
+1978-06-06,Hungary,Italy,1.0,3.0,,1978,away
+1978-06-06,Poland,Tunisia,1.0,0.0,,1978,home
+1978-06-07,Austria,Sweden,1.0,0.0,,1978,home
+1978-06-07,Brazil,Spain,0.0,0.0,,1978,draw
+1978-06-07,Iran,Scotland,1.0,1.0,,1978,draw
+1978-06-07,Netherlands,Peru,0.0,0.0,,1978,draw
+1978-06-10,Argentina,Italy,0.0,1.0,,1978,away
+1978-06-10,France,Hungary,3.0,1.0,,1978,home
+1978-06-10,Germany,Tunisia,0.0,0.0,,1978,draw
+1978-06-10,Mexico,Poland,1.0,3.0,,1978,away
+1978-06-11,Austria,Brazil,0.0,1.0,,1978,away
+1978-06-11,Iran,Peru,1.0,4.0,,1978,away
+1978-06-11,Netherlands,Scotland,2.0,3.0,,1978,away
+1978-06-11,Spain,Sweden,1.0,0.0,,1978,home
+1978-06-14,Argentina,Poland,2.0,0.0,,1978,home
+1978-06-14,Austria,Netherlands,1.0,5.0,,1978,away
+1978-06-14,Brazil,Peru,3.0,0.0,,1978,home
+1978-06-14,Germany,Italy,0.0,0.0,,1978,draw
+1978-06-18,Argentina,Brazil,0.0,0.0,,1978,draw
+1978-06-18,Austria,Italy,0.0,1.0,,1978,away
+1978-06-18,Germany,Netherlands,2.0,2.0,,1978,draw
+1978-06-18,Peru,Poland,0.0,1.0,,1978,away
+1978-06-21,Argentina,Peru,6.0,0.0,,1978,home
+1978-06-21,Austria,Germany,3.0,2.0,,1978,home
+1978-06-21,Brazil,Poland,3.0,1.0,,1978,home
+1978-06-21,Italy,Netherlands,1.0,2.0,,1978,away
+1978-06-24,Brazil,Italy,2.0,1.0,,1978,home
+1978-06-25,Argentina,Netherlands,3.0,1.0,,1978,home
+1982-06-13,Argentina,Belgium,0.0,1.0,,1982,away
+1982-06-14,Brazil,Russia,2.0,1.0,,1982,home
+1982-06-14,Italy,Poland,0.0,0.0,,1982,draw
+1982-06-15,Hungary,El Salvador,10.0,1.0,,1982,home
+1982-06-15,Peru,Cameroon,0.0,0.0,,1982,draw
+1982-06-15,Scotland,New Zealand,5.0,2.0,,1982,home
+1982-06-16,England,France,3.0,1.0,,1982,home
+1982-06-16,Germany,Algeria,1.0,2.0,,1982,away
+1982-06-16,Spain,Honduras,1.0,1.0,,1982,draw
+1982-06-17,Chile,Austria,0.0,1.0,,1982,away
+1982-06-17,Czechoslovakia,Kuwait,1.0,1.0,,1982,draw
+1982-06-17,Yugoslavia,Northern Ireland,0.0,0.0,,1982,draw
+1982-06-18,Argentina,Hungary,4.0,1.0,,1982,home
+1982-06-18,Brazil,Scotland,4.0,1.0,,1982,home
+1982-06-18,Italy,Peru,1.0,1.0,,1982,draw
+1982-06-19,Belgium,El Salvador,1.0,0.0,,1982,home
+1982-06-19,Poland,Cameroon,0.0,0.0,,1982,draw
+1982-06-19,Russia,New Zealand,3.0,0.0,,1982,home
+1982-06-20,England,Czechoslovakia,2.0,0.0,,1982,home
+1982-06-20,Germany,Chile,4.0,1.0,,1982,home
+1982-06-20,Spain,Yugoslavia,2.0,1.0,,1982,home
+1982-06-21,Algeria,Austria,0.0,2.0,,1982,away
+1982-06-21,France,Kuwait,4.0,1.0,,1982,home
+1982-06-21,Honduras,Northern Ireland,1.0,1.0,,1982,draw
+1982-06-22,Belgium,Hungary,1.0,1.0,,1982,draw
+1982-06-22,Poland,Peru,5.0,1.0,,1982,home
+1982-06-22,Russia,Scotland,2.0,2.0,,1982,draw
+1982-06-23,Argentina,El Salvador,2.0,0.0,,1982,home
+1982-06-23,Brazil,New Zealand,4.0,0.0,,1982,home
+1982-06-23,Italy,Cameroon,1.0,1.0,,1982,draw
+1982-06-24,Algeria,Chile,3.0,2.0,,1982,home
+1982-06-24,France,Czechoslovakia,1.0,1.0,,1982,draw
+1982-06-24,Honduras,Yugoslavia,0.0,1.0,,1982,away
+1982-06-25,England,Kuwait,1.0,0.0,,1982,home
+1982-06-25,Germany,Austria,1.0,0.0,,1982,home
+1982-06-25,Spain,Northern Ireland,0.0,1.0,,1982,away
+1982-06-28,Austria,France,0.0,1.0,,1982,away
+1982-06-28,Poland,Belgium,3.0,0.0,,1982,home
+1982-06-29,Germany,England,0.0,0.0,,1982,draw
+1982-06-29,Italy,Argentina,2.0,1.0,,1982,home
+1982-07-01,Austria,Northern Ireland,2.0,2.0,,1982,draw
+1982-07-01,Belgium,Russia,0.0,1.0,,1982,away
+1982-07-02,Argentina,Brazil,1.0,3.0,,1982,away
+1982-07-02,Spain,Germany,1.0,2.0,,1982,away
+1982-07-04,France,Northern Ireland,4.0,1.0,,1982,home
+1982-07-04,Poland,Russia,0.0,0.0,,1982,draw
+1982-07-05,Italy,Brazil,3.0,2.0,,1982,home
+1982-07-05,Spain,England,0.0,0.0,,1982,draw
+1982-07-08,Germany,France,3.0,3.0,,1982,draw
+1982-07-08,Poland,Italy,0.0,2.0,,1982,away
+1982-07-10,Poland,France,3.0,2.0,,1982,home
+1982-07-11,Italy,Germany,3.0,1.0,,1982,home
+1986-05-31,Bulgaria,Italy,1.0,1.0,,1986,draw
+1986-06-01,Canada,France,0.0,1.0,,1986,away
+1986-06-01,Spain,Brazil,0.0,1.0,,1986,away
+1986-06-02,Argentina,South Korea,3.0,1.0,,1986,home
+1986-06-02,Morocco,Poland,0.0,0.0,,1986,draw
+1986-06-02,Russia,Hungary,6.0,0.0,,1986,home
+1986-06-03,Algeria,Northern Ireland,1.0,1.0,,1986,draw
+1986-06-03,Mexico,Belgium,2.0,1.0,,1986,home
+1986-06-03,Portugal,England,1.0,0.0,,1986,home
+1986-06-04,Paraguay,Iraq,1.0,0.0,,1986,home
+1986-06-04,Scotland,Denmark,0.0,1.0,,1986,away
+1986-06-04,Uruguay,Germany,1.0,1.0,,1986,draw
+1986-06-05,France,Russia,1.0,1.0,,1986,draw
+1986-06-05,Italy,Argentina,1.0,1.0,,1986,draw
+1986-06-05,South Korea,Bulgaria,1.0,1.0,,1986,draw
+1986-06-06,Brazil,Algeria,1.0,0.0,,1986,home
+1986-06-06,England,Morocco,0.0,0.0,,1986,draw
+1986-06-06,Hungary,Canada,2.0,0.0,,1986,home
+1986-06-07,Mexico,Paraguay,1.0,1.0,,1986,draw
+1986-06-07,Northern Ireland,Spain,1.0,2.0,,1986,away
+1986-06-07,Poland,Portugal,1.0,0.0,,1986,home
+1986-06-08,Denmark,Uruguay,6.0,1.0,,1986,home
+1986-06-08,Germany,Scotland,2.0,1.0,,1986,home
+1986-06-08,Iraq,Belgium,1.0,2.0,,1986,away
+1986-06-09,Hungary,France,0.0,3.0,,1986,away
+1986-06-09,Russia,Canada,2.0,0.0,,1986,home
+1986-06-10,Argentina,Bulgaria,2.0,0.0,,1986,home
+1986-06-10,South Korea,Italy,2.0,3.0,,1986,away
+1986-06-11,England,Poland,3.0,0.0,,1986,home
+1986-06-11,Mexico,Iraq,1.0,0.0,,1986,home
+1986-06-11,Paraguay,Belgium,2.0,2.0,,1986,draw
+1986-06-11,Portugal,Morocco,1.0,3.0,,1986,away
+1986-06-12,Algeria,Spain,0.0,3.0,,1986,away
+1986-06-12,Northern Ireland,Brazil,0.0,3.0,,1986,away
+1986-06-13,Denmark,Germany,2.0,0.0,,1986,home
+1986-06-13,Scotland,Uruguay,0.0,0.0,,1986,draw
+1986-06-15,Mexico,Bulgaria,2.0,0.0,,1986,home
+1986-06-15,Russia,Belgium,3.0,4.0,,1986,away
+1986-06-16,Argentina,Uruguay,1.0,0.0,,1986,home
+1986-06-16,Brazil,Poland,4.0,0.0,,1986,home
+1986-06-17,Italy,France,0.0,2.0,,1986,away
+1986-06-17,Morocco,Germany,0.0,1.0,,1986,away
+1986-06-18,Denmark,Spain,1.0,5.0,,1986,away
+1986-06-18,England,Paraguay,3.0,0.0,,1986,home
+1986-06-21,Brazil,France,1.0,1.0,,1986,draw
+1986-06-21,Mexico,Germany,0.0,0.0,,1986,draw
+1986-06-22,Argentina,England,2.0,1.0,,1986,home
+1986-06-22,Spain,Belgium,1.0,1.0,,1986,draw
+1986-06-25,Argentina,Belgium,2.0,0.0,,1986,home
+1986-06-25,France,Germany,0.0,2.0,,1986,away
+1986-06-28,France,Belgium,4.0,2.0,,1986,home
+1986-06-29,Argentina,Germany,3.0,2.0,,1986,home
+1990-06-08,Argentina,Cameroon,0.0,1.0,,1990,away
+1990-06-09,Italy,Austria,1.0,0.0,,1990,home
+1990-06-09,Russia,Romania,0.0,2.0,,1990,away
+1990-06-09,United Arab Emirates,Colombia,0.0,2.0,,1990,away
+1990-06-10,Brazil,Sweden,2.0,1.0,,1990,home
+1990-06-10,Germany,Yugoslavia,4.0,1.0,,1990,home
+1990-06-10,United States,Czechoslovakia,1.0,5.0,,1990,away
+1990-06-11,Costa Rica,Scotland,1.0,0.0,,1990,home
+1990-06-11,England,Republic of Ireland,1.0,1.0,,1990,draw
+1990-06-12,Belgium,South Korea,2.0,0.0,,1990,home
+1990-06-12,Netherlands,Egypt,1.0,1.0,,1990,draw
+1990-06-13,Argentina,Russia,2.0,0.0,,1990,home
+1990-06-13,Uruguay,Spain,0.0,0.0,,1990,draw
+1990-06-14,Cameroon,Romania,2.0,1.0,,1990,home
+1990-06-14,Italy,United States,1.0,0.0,,1990,home
+1990-06-14,Yugoslavia,Colombia,1.0,0.0,,1990,home
+1990-06-15,Austria,Czechoslovakia,0.0,1.0,,1990,away
+1990-06-15,Germany,United Arab Emirates,5.0,1.0,,1990,home
+1990-06-16,Brazil,Costa Rica,1.0,0.0,,1990,home
+1990-06-16,England,Netherlands,0.0,0.0,,1990,draw
+1990-06-16,Sweden,Scotland,1.0,2.0,,1990,away
+1990-06-17,Belgium,Uruguay,3.0,1.0,,1990,home
+1990-06-17,Republic of Ireland,Egypt,0.0,0.0,,1990,draw
+1990-06-17,South Korea,Spain,1.0,3.0,,1990,away
+1990-06-18,Argentina,Romania,1.0,1.0,,1990,draw
+1990-06-18,Cameroon,Russia,0.0,4.0,,1990,away
+1990-06-19,Austria,United States,2.0,1.0,,1990,home
+1990-06-19,Germany,Colombia,1.0,1.0,,1990,draw
+1990-06-19,Italy,Czechoslovakia,2.0,0.0,,1990,home
+1990-06-19,Yugoslavia,United Arab Emirates,4.0,1.0,,1990,home
+1990-06-20,Brazil,Scotland,1.0,0.0,,1990,home
+1990-06-20,Sweden,Costa Rica,1.0,2.0,,1990,away
+1990-06-21,Belgium,Spain,1.0,2.0,,1990,away
+1990-06-21,England,Egypt,1.0,0.0,,1990,home
+1990-06-21,Republic of Ireland,Netherlands,1.0,1.0,,1990,draw
+1990-06-21,South Korea,Uruguay,0.0,1.0,,1990,away
+1990-06-23,Cameroon,Colombia,2.0,1.0,,1990,home
+1990-06-23,Czechoslovakia,Costa Rica,4.0,1.0,,1990,home
+1990-06-24,Brazil,Argentina,0.0,1.0,,1990,away
+1990-06-24,Germany,Netherlands,2.0,1.0,,1990,home
+1990-06-25,Republic of Ireland,Romania,0.0,0.0,,1990,draw
+1990-06-25,Italy,Uruguay,2.0,0.0,,1990,home
+1990-06-26,England,Belgium,1.0,0.0,,1990,home
+1990-06-26,Spain,Yugoslavia,1.0,2.0,,1990,away
+1990-06-30,Italy,Republic of Ireland,1.0,0.0,,1990,home
+1990-06-30,Yugoslavia,Argentina,0.0,0.0,,1990,draw
+1990-07-01,Cameroon,England,2.0,3.0,,1990,away
+1990-07-01,Germany,Czechoslovakia,1.0,0.0,,1990,home
+1990-07-03,Italy,Argentina,1.0,1.0,,1990,draw
+1990-07-04,Germany,England,1.0,1.0,,1990,draw
+1990-07-07,Italy,England,2.0,1.0,,1990,home
+1990-07-08,Germany,Argentina,1.0,0.0,,1990,home
+1994-06-17,Germany,Bolivia,1.0,0.0,,1994,home
+1994-06-17,Spain,South Korea,2.0,2.0,,1994,draw
+1994-06-18,Colombia,Romania,1.0,3.0,,1994,away
+1994-06-18,Italy,Republic of Ireland,0.0,1.0,,1994,away
+1994-06-18,United States,Switzerland,1.0,1.0,,1994,draw
+1994-06-19,Belgium,Morocco,1.0,0.0,,1994,home
+1994-06-19,Cameroon,Sweden,2.0,2.0,,1994,draw
+1994-06-19,Norway,Mexico,1.0,0.0,,1994,home
+1994-06-20,Brazil,Russia,2.0,0.0,,1994,home
+1994-06-20,Netherlands,Saudi Arabia,2.0,1.0,,1994,home
+1994-06-21,Argentina,Greece,4.0,0.0,,1994,home
+1994-06-21,Germany,Spain,1.0,1.0,,1994,draw
+1994-06-21,Nigeria,Bulgaria,3.0,0.0,,1994,home
+1994-06-22,Romania,Switzerland,1.0,4.0,,1994,away
+1994-06-22,United States,Colombia,2.0,1.0,,1994,home
+1994-06-23,Italy,Norway,1.0,0.0,,1994,home
+1994-06-23,South Korea,Bolivia,0.0,0.0,,1994,draw
+1994-06-24,Brazil,Cameroon,3.0,0.0,,1994,home
+1994-06-24,Mexico,Republic of Ireland,2.0,1.0,,1994,home
+1994-06-24,Sweden,Russia,3.0,1.0,,1994,home
+1994-06-25,Argentina,Nigeria,2.0,1.0,,1994,home
+1994-06-25,Belgium,Netherlands,1.0,0.0,,1994,home
+1994-06-25,Saudi Arabia,Morocco,2.0,1.0,,1994,home
+1994-06-26,Bulgaria,Greece,4.0,0.0,,1994,home
+1994-06-26,Switzerland,Colombia,0.0,2.0,,1994,away
+1994-06-26,United States,Romania,0.0,1.0,,1994,away
+1994-06-27,Bolivia,Spain,1.0,3.0,,1994,away
+1994-06-27,Germany,South Korea,3.0,2.0,,1994,home
+1994-06-28,Brazil,Sweden,1.0,1.0,,1994,draw
+1994-06-28,Republic of Ireland,Norway,0.0,0.0,,1994,draw
+1994-06-28,Italy,Mexico,1.0,1.0,,1994,draw
+1994-06-28,Russia,Cameroon,6.0,1.0,,1994,home
+1994-06-29,Belgium,Saudi Arabia,0.0,1.0,,1994,away
+1994-06-29,Morocco,Netherlands,1.0,2.0,,1994,away
+1994-06-30,Argentina,Bulgaria,0.0,2.0,,1994,away
+1994-06-30,Greece,Nigeria,0.0,2.0,,1994,away
+1994-07-02,Germany,Belgium,3.0,2.0,,1994,home
+1994-07-02,Spain,Switzerland,3.0,0.0,,1994,home
+1994-07-03,Romania,Argentina,3.0,2.0,,1994,home
+1994-07-03,Saudi Arabia,Sweden,1.0,3.0,,1994,away
+1994-07-04,Netherlands,Republic of Ireland,2.0,0.0,,1994,home
+1994-07-04,United States,Brazil,0.0,1.0,,1994,away
+1994-07-05,Mexico,Bulgaria,1.0,1.0,,1994,draw
+1994-07-05,Nigeria,Italy,1.0,2.0,,1994,away
+1994-07-09,Italy,Spain,2.0,1.0,,1994,home
+1994-07-09,Netherlands,Brazil,2.0,3.0,,1994,away
+1994-07-10,Bulgaria,Germany,2.0,1.0,,1994,home
+1994-07-10,Romania,Sweden,2.0,2.0,,1994,draw
+1994-07-13,Bulgaria,Italy,1.0,2.0,,1994,away
+1994-07-13,Sweden,Brazil,0.0,1.0,,1994,away
+1994-07-16,Sweden,Bulgaria,4.0,0.0,,1994,home
+1994-07-17,Brazil,Italy,0.0,0.0,,1994,draw
+1998-06-10,Brazil,Scotland,2.0,1.0,,1998,home
+1998-06-10,Morocco,Norway,2.0,2.0,,1998,draw
+1998-06-11,Cameroon,Austria,1.0,1.0,,1998,draw
+1998-06-11,Italy,Chile,2.0,2.0,,1998,draw
+1998-06-12,France,South Africa,3.0,0.0,,1998,home
+1998-06-12,Paraguay,Bulgaria,0.0,0.0,,1998,draw
+1998-06-12,Saudi Arabia,Denmark,0.0,1.0,,1998,away
+1998-06-13,South Korea,Mexico,1.0,3.0,,1998,away
+1998-06-13,Netherlands,Belgium,0.0,0.0,,1998,draw
+1998-06-13,Spain,Nigeria,2.0,3.0,,1998,away
+1998-06-14,Argentina,Japan,1.0,0.0,,1998,home
+1998-06-14,Jamaica,Croatia,1.0,3.0,,1998,away
+1998-06-14,Serbia,Iran,1.0,0.0,,1998,home
+1998-06-15,England,Tunisia,2.0,0.0,,1998,home
+1998-06-15,Germany,United States,2.0,0.0,,1998,home
+1998-06-15,Romania,Colombia,1.0,0.0,,1998,home
+1998-06-16,Brazil,Morocco,3.0,0.0,,1998,home
+1998-06-16,Scotland,Norway,1.0,1.0,,1998,draw
+1998-06-17,Chile,Austria,1.0,1.0,,1998,draw
+1998-06-17,Italy,Cameroon,3.0,0.0,,1998,home
+1998-06-18,France,Saudi Arabia,4.0,0.0,,1998,home
+1998-06-18,South Africa,Denmark,1.0,1.0,,1998,draw
+1998-06-19,Nigeria,Bulgaria,1.0,0.0,,1998,home
+1998-06-19,Spain,Paraguay,0.0,0.0,,1998,draw
+1998-06-20,Belgium,Mexico,2.0,2.0,,1998,draw
+1998-06-20,Japan,Croatia,0.0,1.0,,1998,away
+1998-06-20,Netherlands,South Korea,5.0,0.0,,1998,home
+1998-06-21,Argentina,Jamaica,5.0,0.0,,1998,home
+1998-06-21,Germany,Serbia,2.0,2.0,,1998,draw
+1998-06-21,United States,Iran,1.0,2.0,,1998,away
+1998-06-22,Colombia,Tunisia,1.0,0.0,,1998,home
+1998-06-22,Romania,England,2.0,1.0,,1998,home
+1998-06-23,Brazil,Norway,1.0,2.0,,1998,away
+1998-06-23,Chile,Cameroon,1.0,1.0,,1998,draw
+1998-06-23,Italy,Austria,2.0,1.0,,1998,home
+1998-06-23,Scotland,Morocco,0.0,3.0,,1998,away
+1998-06-24,France,Denmark,2.0,1.0,,1998,home
+1998-06-24,Nigeria,Paraguay,1.0,3.0,,1998,away
+1998-06-24,South Africa,Saudi Arabia,2.0,2.0,,1998,draw
+1998-06-24,Spain,Bulgaria,6.0,1.0,,1998,home
+1998-06-25,Belgium,South Korea,1.0,1.0,,1998,draw
+1998-06-25,Germany,Iran,2.0,0.0,,1998,home
+1998-06-25,Netherlands,Mexico,2.0,2.0,,1998,draw
+1998-06-25,United States,Serbia,0.0,1.0,,1998,away
+1998-06-26,Argentina,Croatia,1.0,0.0,,1998,home
+1998-06-26,Colombia,England,0.0,2.0,,1998,away
+1998-06-26,Japan,Jamaica,1.0,2.0,,1998,away
+1998-06-26,Romania,Tunisia,1.0,1.0,,1998,draw
+1998-06-27,Brazil,Chile,4.0,1.0,,1998,home
+1998-06-27,Italy,Norway,1.0,0.0,,1998,home
+1998-06-28,France,Paraguay,1.0,0.0,,1998,home
+1998-06-28,Nigeria,Denmark,1.0,4.0,,1998,away
+1998-06-29,Germany,Mexico,2.0,1.0,,1998,home
+1998-06-29,Netherlands,Serbia,2.0,1.0,,1998,home
+1998-06-30,Argentina,England,2.0,2.0,,1998,draw
+1998-06-30,Romania,Croatia,0.0,1.0,,1998,away
+1998-07-03,Brazil,Denmark,3.0,2.0,,1998,home
+1998-07-03,France,Italy,0.0,0.0,,1998,draw
+1998-07-04,Germany,Croatia,0.0,3.0,,1998,away
+1998-07-04,Netherlands,Argentina,2.0,1.0,,1998,home
+1998-07-07,Brazil,Netherlands,1.0,1.0,,1998,draw
+1998-07-08,France,Croatia,2.0,1.0,,1998,home
+1998-07-11,Netherlands,Croatia,1.0,2.0,,1998,away
+1998-07-12,France,Brazil,3.0,0.0,,1998,home
+2002-05-31,France,Senegal,0.0,1.0,,2002,away
+2002-06-01,Germany,Saudi Arabia,8.0,0.0,,2002,home
+2002-06-01,Republic of Ireland,Cameroon,1.0,1.0,,2002,draw
+2002-06-01,Uruguay,Denmark,1.0,2.0,,2002,away
+2002-06-02,Argentina,Nigeria,1.0,0.0,,2002,home
+2002-06-02,England,Sweden,1.0,1.0,,2002,draw
+2002-06-02,Paraguay,South Africa,2.0,2.0,,2002,draw
+2002-06-02,Spain,Slovenia,3.0,1.0,,2002,home
+2002-06-03,Brazil,Turkey,2.0,1.0,,2002,home
+2002-06-03,Croatia,Mexico,0.0,1.0,,2002,away
+2002-06-03,Italy,Ecuador,2.0,0.0,,2002,home
+2002-06-04,China,Costa Rica,0.0,2.0,,2002,away
+2002-06-04,Japan,Belgium,2.0,2.0,,2002,draw
+2002-06-04,South Korea,Poland,2.0,0.0,,2002,home
+2002-06-05,Germany,Republic of Ireland,1.0,1.0,,2002,draw
+2002-06-05,Russia,Tunisia,2.0,0.0,,2002,home
+2002-06-05,United States,Portugal,3.0,2.0,,2002,home
+2002-06-06,Cameroon,Saudi Arabia,1.0,0.0,,2002,home
+2002-06-06,Denmark,Senegal,1.0,1.0,,2002,draw
+2002-06-06,France,Uruguay,0.0,0.0,,2002,draw
+2002-06-07,Argentina,England,0.0,1.0,,2002,away
+2002-06-07,Spain,Paraguay,3.0,1.0,,2002,home
+2002-06-07,Sweden,Nigeria,2.0,1.0,,2002,home
+2002-06-08,Brazil,China,4.0,0.0,,2002,home
+2002-06-08,Italy,Croatia,1.0,2.0,,2002,away
+2002-06-08,South Africa,Slovenia,1.0,0.0,,2002,home
+2002-06-09,Costa Rica,Turkey,1.0,1.0,,2002,draw
+2002-06-09,Japan,Russia,1.0,0.0,,2002,home
+2002-06-09,Mexico,Ecuador,2.0,1.0,,2002,home
+2002-06-10,South Korea,United States,1.0,1.0,,2002,draw
+2002-06-10,Portugal,Poland,4.0,0.0,,2002,home
+2002-06-10,Tunisia,Belgium,1.0,1.0,,2002,draw
+2002-06-11,Cameroon,Germany,0.0,2.0,,2002,away
+2002-06-11,Denmark,France,2.0,0.0,,2002,home
+2002-06-11,Saudi Arabia,Republic of Ireland,0.0,3.0,,2002,away
+2002-06-11,Senegal,Uruguay,3.0,3.0,,2002,draw
+2002-06-12,Nigeria,England,0.0,0.0,,2002,draw
+2002-06-12,Slovenia,Paraguay,1.0,3.0,,2002,away
+2002-06-12,South Africa,Spain,2.0,3.0,,2002,away
+2002-06-12,Sweden,Argentina,1.0,1.0,,2002,draw
+2002-06-13,Costa Rica,Brazil,2.0,5.0,,2002,away
+2002-06-13,Ecuador,Croatia,1.0,0.0,,2002,home
+2002-06-13,Mexico,Italy,1.0,1.0,,2002,draw
+2002-06-13,Turkey,China,3.0,0.0,,2002,home
+2002-06-14,Belgium,Russia,3.0,2.0,,2002,home
+2002-06-14,Japan,Tunisia,2.0,0.0,,2002,home
+2002-06-14,South Korea,Portugal,1.0,0.0,,2002,home
+2002-06-14,Poland,United States,3.0,1.0,,2002,home
+2002-06-15,Denmark,England,0.0,3.0,,2002,away
+2002-06-15,Germany,Paraguay,1.0,0.0,,2002,home
+2002-06-16,Spain,Republic of Ireland,1.0,1.0,,2002,draw
+2002-06-16,Sweden,Senegal,1.0,2.0,,2002,away
+2002-06-17,Brazil,Belgium,2.0,0.0,,2002,home
+2002-06-17,Mexico,United States,0.0,2.0,,2002,away
+2002-06-18,Japan,Turkey,0.0,1.0,,2002,away
+2002-06-18,South Korea,Italy,2.0,1.0,,2002,home
+2002-06-21,England,Brazil,1.0,2.0,,2002,away
+2002-06-21,Germany,United States,1.0,0.0,,2002,home
+2002-06-22,South Korea,Spain,0.0,0.0,,2002,draw
+2002-06-22,Senegal,Turkey,0.0,1.0,,2002,away
+2002-06-25,South Korea,Germany,0.0,1.0,,2002,away
+2002-06-26,Brazil,Turkey,1.0,0.0,,2002,home
+2002-06-29,South Korea,Turkey,2.0,3.0,,2002,away
+2002-06-30,Germany,Brazil,0.0,2.0,,2002,away
+2006-06-09,Germany,Costa Rica,4.0,2.0,,2006,home
+2006-06-09,Poland,Ecuador,0.0,2.0,,2006,away
+2006-06-10,Argentina,Ivory Coast,2.0,1.0,,2006,home
+2006-06-10,England,Paraguay,1.0,0.0,,2006,home
+2006-06-10,Trinidad and Tobago,Sweden,0.0,0.0,,2006,draw
+2006-06-11,Angola,Portugal,0.0,1.0,,2006,away
+2006-06-11,Mexico,Iran,3.0,1.0,,2006,home
+2006-06-11,Serbia,Netherlands,0.0,1.0,,2006,away
+2006-06-12,Australia,Japan,3.0,1.0,,2006,home
+2006-06-12,Italy,Ghana,2.0,0.0,,2006,home
+2006-06-12,United States,Czech Republic,0.0,3.0,,2006,away
+2006-06-13,Brazil,Croatia,1.0,0.0,,2006,home
+2006-06-13,France,Switzerland,0.0,0.0,,2006,draw
+2006-06-13,South Korea,Togo,2.0,1.0,,2006,home
+2006-06-14,Germany,Poland,1.0,0.0,,2006,home
+2006-06-14,Spain,Ukraine,4.0,0.0,,2006,home
+2006-06-14,Tunisia,Saudi Arabia,2.0,2.0,,2006,draw
+2006-06-15,Ecuador,Costa Rica,3.0,0.0,,2006,home
+2006-06-15,England,Trinidad and Tobago,2.0,0.0,,2006,home
+2006-06-15,Sweden,Paraguay,1.0,0.0,,2006,home
+2006-06-16,Argentina,Serbia,6.0,0.0,,2006,home
+2006-06-16,Mexico,Angola,0.0,0.0,,2006,draw
+2006-06-16,Netherlands,Ivory Coast,2.0,1.0,,2006,home
+2006-06-17,Czech Republic,Ghana,0.0,2.0,,2006,away
+2006-06-17,Italy,United States,1.0,1.0,,2006,draw
+2006-06-17,Portugal,Iran,2.0,0.0,,2006,home
+2006-06-18,Brazil,Australia,2.0,0.0,,2006,home
+2006-06-18,France,South Korea,1.0,1.0,,2006,draw
+2006-06-18,Japan,Croatia,0.0,0.0,,2006,draw
+2006-06-19,Saudi Arabia,Ukraine,0.0,4.0,,2006,away
+2006-06-19,Spain,Tunisia,3.0,1.0,,2006,home
+2006-06-19,Togo,Switzerland,0.0,2.0,,2006,away
+2006-06-20,Costa Rica,Poland,1.0,2.0,,2006,away
+2006-06-20,Germany,Ecuador,3.0,0.0,,2006,home
+2006-06-20,Paraguay,Trinidad and Tobago,2.0,0.0,,2006,home
+2006-06-20,Sweden,England,2.0,2.0,,2006,draw
+2006-06-21,Iran,Angola,1.0,1.0,,2006,draw
+2006-06-21,Ivory Coast,Serbia,3.0,2.0,,2006,home
+2006-06-21,Netherlands,Argentina,0.0,0.0,,2006,draw
+2006-06-21,Portugal,Mexico,2.0,1.0,,2006,home
+2006-06-22,Croatia,Australia,2.0,2.0,,2006,draw
+2006-06-22,Czech Republic,Italy,0.0,2.0,,2006,away
+2006-06-22,Ghana,United States,2.0,1.0,,2006,home
+2006-06-22,Japan,Brazil,1.0,4.0,,2006,away
+2006-06-23,Saudi Arabia,Spain,0.0,1.0,,2006,away
+2006-06-23,Switzerland,South Korea,2.0,0.0,,2006,home
+2006-06-23,Togo,France,0.0,2.0,,2006,away
+2006-06-23,Ukraine,Tunisia,1.0,0.0,,2006,home
+2006-06-24,Argentina,Mexico,2.0,1.0,,2006,home
+2006-06-24,Germany,Sweden,2.0,0.0,,2006,home
+2006-06-25,England,Ecuador,1.0,0.0,,2006,home
+2006-06-25,Portugal,Netherlands,1.0,0.0,,2006,home
+2006-06-26,Italy,Australia,1.0,0.0,,2006,home
+2006-06-26,Switzerland,Ukraine,0.0,0.0,,2006,draw
+2006-06-27,Brazil,Ghana,3.0,0.0,,2006,home
+2006-06-27,Spain,France,1.0,3.0,,2006,away
+2006-06-30,Germany,Argentina,1.0,1.0,,2006,draw
+2006-06-30,Italy,Ukraine,3.0,0.0,,2006,home
+2006-07-01,Brazil,France,0.0,1.0,,2006,away
+2006-07-01,England,Portugal,0.0,0.0,,2006,draw
+2006-07-04,Germany,Italy,0.0,2.0,,2006,away
+2006-07-05,Portugal,France,0.0,1.0,,2006,away
+2006-07-08,Germany,Portugal,3.0,1.0,,2006,home
+2006-07-09,Italy,France,1.0,1.0,,2006,draw
+2010-06-11,South Africa,Mexico,1.0,1.0,,2010,draw
+2010-06-11,Uruguay,France,0.0,0.0,,2010,draw
+2010-06-12,Argentina,Nigeria,1.0,0.0,,2010,home
+2010-06-12,England,United States,1.0,1.0,,2010,draw
+2010-06-12,South Korea,Greece,2.0,0.0,,2010,home
+2010-06-13,Algeria,Slovenia,0.0,1.0,,2010,away
+2010-06-13,Germany,Australia,4.0,0.0,,2010,home
+2010-06-13,Serbia,Ghana,0.0,1.0,,2010,away
+2010-06-14,Italy,Paraguay,1.0,1.0,,2010,draw
+2010-06-14,Japan,Cameroon,1.0,0.0,,2010,home
+2010-06-14,Netherlands,Denmark,2.0,0.0,,2010,home
+2010-06-15,Brazil,North Korea,2.0,1.0,,2010,home
+2010-06-15,Ivory Coast,Portugal,0.0,0.0,,2010,draw
+2010-06-15,New Zealand,Slovakia,1.0,1.0,,2010,draw
+2010-06-16,Honduras,Chile,0.0,1.0,,2010,away
+2010-06-16,South Africa,Uruguay,0.0,3.0,,2010,away
+2010-06-16,Spain,Switzerland,0.0,1.0,,2010,away
+2010-06-17,Argentina,South Korea,4.0,1.0,,2010,home
+2010-06-17,France,Mexico,0.0,2.0,,2010,away
+2010-06-17,Greece,Nigeria,2.0,1.0,,2010,home
+2010-06-18,England,Algeria,0.0,0.0,,2010,draw
+2010-06-18,Germany,Serbia,0.0,1.0,,2010,away
+2010-06-18,Slovenia,United States,2.0,2.0,,2010,draw
+2010-06-19,Cameroon,Denmark,1.0,2.0,,2010,away
+2010-06-19,Ghana,Australia,1.0,1.0,,2010,draw
+2010-06-19,Netherlands,Japan,1.0,0.0,,2010,home
+2010-06-20,Brazil,Ivory Coast,3.0,1.0,,2010,home
+2010-06-20,Italy,New Zealand,1.0,1.0,,2010,draw
+2010-06-20,Slovakia,Paraguay,0.0,2.0,,2010,away
+2010-06-21,Chile,Switzerland,1.0,0.0,,2010,home
+2010-06-21,Portugal,North Korea,7.0,0.0,,2010,home
+2010-06-21,Spain,Honduras,2.0,0.0,,2010,home
+2010-06-22,Greece,Argentina,0.0,2.0,,2010,away
+2010-06-22,Mexico,Uruguay,0.0,1.0,,2010,away
+2010-06-22,Nigeria,South Korea,2.0,2.0,,2010,draw
+2010-06-22,South Africa,France,2.0,1.0,,2010,home
+2010-06-23,Australia,Serbia,2.0,1.0,,2010,home
+2010-06-23,Ghana,Germany,0.0,1.0,,2010,away
+2010-06-23,Slovenia,England,0.0,1.0,,2010,away
+2010-06-23,United States,Algeria,1.0,0.0,,2010,home
+2010-06-24,Cameroon,Netherlands,1.0,2.0,,2010,away
+2010-06-24,Denmark,Japan,1.0,3.0,,2010,away
+2010-06-24,Paraguay,New Zealand,0.0,0.0,,2010,draw
+2010-06-24,Slovakia,Italy,3.0,2.0,,2010,home
+2010-06-25,Chile,Spain,1.0,2.0,,2010,away
+2010-06-25,North Korea,Ivory Coast,0.0,3.0,,2010,away
+2010-06-25,Portugal,Brazil,0.0,0.0,,2010,draw
+2010-06-25,Switzerland,Honduras,0.0,0.0,,2010,draw
+2010-06-26,Uruguay,South Korea,2.0,1.0,,2010,home
+2010-06-26,United States,Ghana,1.0,2.0,,2010,away
+2010-06-27,Argentina,Mexico,3.0,1.0,,2010,home
+2010-06-27,Germany,England,4.0,1.0,,2010,home
+2010-06-28,Brazil,Chile,3.0,0.0,,2010,home
+2010-06-28,Netherlands,Slovakia,2.0,1.0,,2010,home
+2010-06-29,Paraguay,Japan,0.0,0.0,,2010,draw
+2010-06-29,Spain,Portugal,1.0,0.0,,2010,home
+2010-07-02,Netherlands,Brazil,2.0,1.0,,2010,home
+2010-07-02,Uruguay,Ghana,1.0,1.0,,2010,draw
+2010-07-03,Argentina,Germany,0.0,4.0,,2010,away
+2010-07-03,Paraguay,Spain,0.0,1.0,,2010,away
+2010-07-06,Uruguay,Netherlands,2.0,3.0,,2010,away
+2010-07-07,Germany,Spain,0.0,1.0,,2010,away
+2010-07-10,Uruguay,Germany,2.0,3.0,,2010,away
+2010-07-11,Netherlands,Spain,0.0,1.0,,2010,away
+2014-06-12,Brazil,Croatia,3.0,1.0,,2014,home
+2014-06-13,Chile,Australia,3.0,1.0,,2014,home
+2014-06-13,Mexico,Cameroon,1.0,0.0,,2014,home
+2014-06-13,Spain,Netherlands,1.0,5.0,,2014,away
+2014-06-14,Colombia,Greece,3.0,0.0,,2014,home
+2014-06-14,England,Italy,1.0,2.0,,2014,away
+2014-06-14,Ivory Coast,Japan,2.0,1.0,,2014,home
+2014-06-14,Uruguay,Costa Rica,1.0,3.0,,2014,away
+2014-06-15,Argentina,Bosnia and Herzegovina,2.0,1.0,,2014,home
+2014-06-15,France,Honduras,3.0,0.0,,2014,home
+2014-06-15,Switzerland,Ecuador,2.0,1.0,,2014,home
+2014-06-16,Germany,Portugal,4.0,0.0,,2014,home
+2014-06-16,Ghana,United States,1.0,2.0,,2014,away
+2014-06-16,Iran,Nigeria,0.0,0.0,,2014,draw
+2014-06-17,Belgium,Algeria,2.0,1.0,,2014,home
+2014-06-17,Brazil,Mexico,0.0,0.0,,2014,draw
+2014-06-17,Russia,South Korea,1.0,1.0,,2014,draw
+2014-06-18,Australia,Netherlands,2.0,3.0,,2014,away
+2014-06-18,Cameroon,Croatia,0.0,4.0,,2014,away
+2014-06-18,Spain,Chile,0.0,2.0,,2014,away
+2014-06-19,Colombia,Ivory Coast,2.0,1.0,,2014,home
+2014-06-19,Japan,Greece,0.0,0.0,,2014,draw
+2014-06-19,Uruguay,England,2.0,1.0,,2014,home
+2014-06-20,Honduras,Ecuador,1.0,2.0,,2014,away
+2014-06-20,Italy,Costa Rica,0.0,1.0,,2014,away
+2014-06-20,Switzerland,France,2.0,5.0,,2014,away
+2014-06-21,Argentina,Iran,1.0,0.0,,2014,home
+2014-06-21,Germany,Ghana,2.0,2.0,,2014,draw
+2014-06-21,Nigeria,Bosnia and Herzegovina,1.0,0.0,,2014,home
+2014-06-22,Belgium,Russia,1.0,0.0,,2014,home
+2014-06-22,South Korea,Algeria,2.0,4.0,,2014,away
+2014-06-22,United States,Portugal,2.0,2.0,,2014,draw
+2014-06-23,Australia,Spain,0.0,3.0,,2014,away
+2014-06-23,Brazil,Cameroon,4.0,1.0,,2014,home
+2014-06-23,Croatia,Mexico,1.0,3.0,,2014,away
+2014-06-23,Netherlands,Chile,2.0,0.0,,2014,home
+2014-06-24,Costa Rica,England,0.0,0.0,,2014,draw
+2014-06-24,Greece,Ivory Coast,2.0,1.0,,2014,home
+2014-06-24,Italy,Uruguay,0.0,1.0,,2014,away
+2014-06-24,Japan,Colombia,1.0,4.0,,2014,away
+2014-06-25,Bosnia and Herzegovina,Iran,3.0,1.0,,2014,home
+2014-06-25,Ecuador,France,0.0,0.0,,2014,draw
+2014-06-25,Honduras,Switzerland,0.0,3.0,,2014,away
+2014-06-25,Nigeria,Argentina,2.0,3.0,,2014,away
+2014-06-26,Algeria,Russia,1.0,1.0,,2014,draw
+2014-06-26,South Korea,Belgium,0.0,1.0,,2014,away
+2014-06-26,Portugal,Ghana,2.0,1.0,,2014,home
+2014-06-26,United States,Germany,0.0,1.0,,2014,away
+2014-06-28,Brazil,Chile,1.0,1.0,,2014,draw
+2014-06-28,Colombia,Uruguay,2.0,0.0,,2014,home
+2014-06-29,Costa Rica,Greece,1.0,1.0,,2014,draw
+2014-06-29,Netherlands,Mexico,2.0,1.0,,2014,home
+2014-06-30,France,Nigeria,2.0,0.0,,2014,home
+2014-06-30,Germany,Algeria,2.0,1.0,,2014,home
+2014-07-01,Argentina,Switzerland,1.0,0.0,,2014,home
+2014-07-01,Belgium,United States,2.0,1.0,,2014,home
+2014-07-04,Brazil,Colombia,2.0,1.0,,2014,home
+2014-07-04,France,Germany,0.0,1.0,,2014,away
+2014-07-05,Argentina,Belgium,1.0,0.0,,2014,home
+2014-07-05,Netherlands,Costa Rica,0.0,0.0,,2014,draw
+2014-07-08,Brazil,Germany,1.0,7.0,,2014,away
+2014-07-09,Netherlands,Argentina,0.0,0.0,,2014,draw
+2014-07-12,Brazil,Netherlands,0.0,3.0,,2014,away
+2014-07-13,Germany,Argentina,1.0,0.0,,2014,home
+2018-06-14,Russia,Saudi Arabia,5.0,0.0,,2018,home
+2018-06-15,Egypt,Uruguay,0.0,1.0,,2018,away
+2018-06-15,Morocco,Iran,0.0,1.0,,2018,away
+2018-06-15,Portugal,Spain,3.0,3.0,,2018,draw
+2018-06-16,France,Australia,2.0,1.0,,2018,home
+2018-06-16,Argentina,Iceland,1.0,1.0,,2018,draw
+2018-06-16,Peru,Denmark,0.0,1.0,,2018,away
+2018-06-16,Croatia,Nigeria,2.0,0.0,,2018,home
+2018-06-17,Costa Rica,Serbia,0.0,1.0,,2018,away
+2018-06-17,Germany,Mexico,0.0,1.0,,2018,away
+2018-06-17,Brazil,Switzerland,1.0,1.0,,2018,draw
+2018-06-18,Sweden,South Korea,1.0,0.0,,2018,home
+2018-06-18,Belgium,Panama,3.0,0.0,,2018,home
+2018-06-18,Tunisia,England,1.0,2.0,,2018,away
+2018-06-19,Colombia,Japan,1.0,2.0,,2018,away
+2018-06-19,Poland,Senegal,1.0,2.0,,2018,away
+2018-06-19,Russia,Egypt,3.0,1.0,,2018,home
+2018-06-20,Portugal,Morocco,1.0,0.0,,2018,home
+2018-06-20,Uruguay,Saudi Arabia,1.0,0.0,,2018,home
+2018-06-20,Iran,Spain,0.0,1.0,,2018,away
+2018-06-21,Denmark,Australia,1.0,1.0,,2018,draw
+2018-06-21,France,Peru,1.0,0.0,,2018,home
+2018-06-21,Argentina,Croatia,0.0,3.0,,2018,away
+2018-06-22,Brazil,Costa Rica,2.0,0.0,,2018,home
+2018-06-22,Nigeria,Iceland,2.0,0.0,,2018,home
+2018-06-22,Serbia,Switzerland,1.0,2.0,,2018,away
+2018-06-23,Belgium,Tunisia,5.0,2.0,,2018,home
+2018-06-23,South Korea,Mexico,1.0,2.0,,2018,away
+2018-06-23,Germany,Sweden,2.0,1.0,,2018,home
+2018-06-24,England,Panama,6.0,1.0,,2018,home
+2018-06-24,Japan,Senegal,2.0,2.0,,2018,draw
+2018-06-24,Poland,Colombia,0.0,3.0,,2018,away
+2018-06-25,Russia,Uruguay,0.0,3.0,,2018,away
+2018-06-25,Saudi Arabia,Egypt,2.0,1.0,,2018,home
+2018-06-25,Spain,Morocco,2.0,2.0,,2018,draw
+2018-06-25,Iran,Portugal,1.0,1.0,,2018,draw
+2018-06-26,Australia,Peru,0.0,2.0,,2018,away
+2018-06-26,Denmark,France,0.0,0.0,,2018,draw
+2018-06-26,Nigeria,Argentina,1.0,2.0,,2018,away
+2018-06-26,Iceland,Croatia,1.0,2.0,,2018,away
+2018-06-27,South Korea,Germany,2.0,0.0,,2018,home
+2018-06-27,Mexico,Sweden,0.0,3.0,,2018,away
+2018-06-27,Serbia,Brazil,0.0,2.0,,2018,away
+2018-06-27,Switzerland,Costa Rica,2.0,2.0,,2018,draw
+2018-06-28,Japan,Poland,0.0,1.0,,2018,away
+2018-06-28,Senegal,Colombia,0.0,1.0,,2018,away
+2018-06-28,Panama,Tunisia,1.0,2.0,,2018,away
+2018-06-28,England,Belgium,0.0,1.0,,2018,away
+2018-06-30,France,Argentina,4.0,3.0,,2018,home
+2018-06-30,Uruguay,Portugal,2.0,1.0,,2018,home
+2018-07-01,Russia,Spain,1.0,1.0,,2018,draw
+2018-07-01,Croatia,Denmark,1.0,1.0,,2018,draw
+2018-07-02,Brazil,Mexico,2.0,0.0,,2018,home
+2018-07-02,Belgium,Japan,3.0,2.0,,2018,home
+2018-07-03,Sweden,Switzerland,1.0,0.0,,2018,home
+2018-07-03,Colombia,England,1.0,1.0,,2018,draw
+2018-07-06,Uruguay,France,0.0,2.0,,2018,away
+2018-07-06,Brazil,Belgium,1.0,2.0,,2018,away
+2018-07-07,Sweden,England,0.0,2.0,,2018,away
+2018-07-07,Russia,Croatia,2.0,2.0,,2018,draw
+2018-07-10,France,Belgium,1.0,0.0,,2018,home
+2018-07-11,Croatia,England,2.0,1.0,,2018,home
+2018-07-14,Belgium,England,2.0,0.0,,2018,home
+2018-07-15,France,Croatia,4.0,2.0,,2018,home
+2022-11-20,Qatar,Ecuador,0.0,2.0,,2022,away
+2022-11-21,Senegal,Netherlands,0.0,2.0,,2022,away
+2022-11-21,England,Iran,6.0,2.0,,2022,home
+2022-11-21,United States,Wales,1.0,1.0,,2022,draw
+2022-11-22,Argentina,Saudi Arabia,1.0,2.0,,2022,away
+2022-11-22,Mexico,Poland,0.0,0.0,,2022,draw
+2022-11-22,Denmark,Tunisia,0.0,0.0,,2022,draw
+2022-11-22,France,Australia,4.0,1.0,,2022,home
+2022-11-23,Germany,Japan,1.0,2.0,,2022,away
+2022-11-23,Spain,Costa Rica,7.0,0.0,,2022,home
+2022-11-23,Morocco,Croatia,0.0,0.0,,2022,draw
+2022-11-23,Belgium,Canada,1.0,0.0,,2022,home
+2022-11-24,Switzerland,Cameroon,1.0,0.0,,2022,home
+2022-11-24,Brazil,Serbia,2.0,0.0,,2022,home
+2022-11-24,Uruguay,South Korea,0.0,0.0,,2022,draw
+2022-11-24,Portugal,Ghana,3.0,2.0,,2022,home
+2022-11-25,Qatar,Senegal,1.0,3.0,,2022,away
+2022-11-25,Netherlands,Ecuador,1.0,1.0,,2022,draw
+2022-11-25,Wales,Iran,0.0,2.0,,2022,away
+2022-11-25,England,United States,0.0,0.0,,2022,draw
+2022-11-26,Poland,Saudi Arabia,2.0,0.0,,2022,home
+2022-11-26,Argentina,Mexico,2.0,0.0,,2022,home
+2022-11-26,Tunisia,Australia,0.0,1.0,,2022,away
+2022-11-26,France,Denmark,2.0,1.0,,2022,home
+2022-11-27,Japan,Costa Rica,0.0,1.0,,2022,away
+2022-11-27,Spain,Germany,1.0,1.0,,2022,draw
+2022-11-27,Belgium,Morocco,0.0,2.0,,2022,away
+2022-11-27,Croatia,Canada,4.0,1.0,,2022,home
+2022-11-28,Cameroon,Serbia,3.0,3.0,,2022,draw
+2022-11-28,Brazil,Switzerland,1.0,0.0,,2022,home
+2022-11-28,South Korea,Ghana,2.0,3.0,,2022,away
+2022-11-28,Portugal,Uruguay,2.0,0.0,,2022,home
+2022-11-29,Ecuador,Senegal,1.0,2.0,,2022,away
+2022-11-29,Qatar,Netherlands,0.0,2.0,,2022,away
+2022-11-29,Wales,England,0.0,3.0,,2022,away
+2022-11-29,Iran,United States,0.0,1.0,,2022,away
+2022-11-30,Poland,Argentina,0.0,2.0,,2022,away
+2022-11-30,Saudi Arabia,Mexico,1.0,2.0,,2022,away
+2022-11-30,Australia,Denmark,1.0,0.0,,2022,home
+2022-11-30,Tunisia,France,1.0,0.0,,2022,home
+2022-12-01,Japan,Spain,2.0,1.0,,2022,home
+2022-12-01,Costa Rica,Germany,2.0,4.0,,2022,away
+2022-12-01,Croatia,Belgium,0.0,0.0,,2022,draw
+2022-12-01,Canada,Morocco,1.0,2.0,,2022,away
+2022-12-02,Serbia,Switzerland,2.0,3.0,,2022,away
+2022-12-02,Cameroon,Brazil,1.0,0.0,,2022,home
+2022-12-02,Ghana,Uruguay,0.0,2.0,,2022,away
+2022-12-02,South Korea,Portugal,2.0,1.0,,2022,home
+2022-12-03,Netherlands,United States,3.0,1.0,,2022,home
+2022-12-03,Argentina,Australia,2.0,1.0,,2022,home
+2022-12-04,France,Poland,3.0,1.0,,2022,home
+2022-12-04,England,Senegal,3.0,0.0,,2022,home
+2022-12-05,Japan,Croatia,1.0,1.0,,2022,draw
+2022-12-05,Brazil,South Korea,4.0,1.0,,2022,home
+2022-12-06,Morocco,Spain,0.0,0.0,,2022,draw
+2022-12-06,Portugal,Switzerland,6.0,1.0,,2022,home
+2022-12-09,Croatia,Brazil,1.0,1.0,,2022,draw
+2022-12-09,Netherlands,Argentina,2.0,2.0,,2022,draw
+2022-12-10,Morocco,Portugal,1.0,0.0,,2022,home
+2022-12-10,England,France,1.0,2.0,,2022,away
+2022-12-13,Argentina,Croatia,3.0,0.0,,2022,home
+2022-12-14,France,Morocco,2.0,0.0,,2022,home
+2022-12-17,Croatia,Morocco,2.0,1.0,,2022,home
+2022-12-18,Argentina,France,3.0,3.0,,2022,draw
+2026-06-11,Mexico,South Africa,2.0,0.0,GROUP_STAGE,2026,home
+2026-06-12,South Korea,Czechia,2.0,1.0,GROUP_STAGE,2026,home
+2026-06-12,Canada,Bosnia-Herzegovina,1.0,1.0,GROUP_STAGE,2026,draw
+2026-06-13,United States,Paraguay,4.0,1.0,GROUP_STAGE,2026,home
+2026-06-13,Qatar,Switzerland,1.0,1.0,GROUP_STAGE,2026,draw
+2026-06-13,Brazil,Morocco,1.0,1.0,GROUP_STAGE,2026,draw
+2026-06-14,Haiti,Scotland,0.0,1.0,GROUP_STAGE,2026,away
+2026-06-14,Australia,Turkey,2.0,0.0,GROUP_STAGE,2026,home
+2026-06-14,Germany,Curaçao,7.0,1.0,GROUP_STAGE,2026,home
+2026-06-14,Netherlands,Japan,2.0,2.0,GROUP_STAGE,2026,draw
+2026-06-14,Ivory Coast,Ecuador,1.0,0.0,GROUP_STAGE,2026,home
+2026-06-15,Sweden,Tunisia,5.0,1.0,GROUP_STAGE,2026,home
+2026-06-15,Spain,Cape Verde Islands,0.0,0.0,GROUP_STAGE,2026,draw
+2026-06-15,Belgium,Egypt,1.0,1.0,GROUP_STAGE,2026,draw
+2026-06-15,Saudi Arabia,Uruguay,1.0,1.0,GROUP_STAGE,2026,draw
+2026-06-16,Iran,New Zealand,2.0,2.0,GROUP_STAGE,2026,draw
+2026-06-16,France,Senegal,3.0,1.0,GROUP_STAGE,2026,home
+2026-06-16,Iraq,Norway,1.0,4.0,GROUP_STAGE,2026,away
+2026-06-17,Argentina,Algeria,3.0,0.0,GROUP_STAGE,2026,home
+2026-06-17,Austria,Jordan,1.0,0.0,GROUP_STAGE,2026,home
