@@ -86,15 +86,15 @@ def run_simulation_pipeline():
     matches = simulate_tournament.load_match_history()
     latest_rankings = simulate_tournament.load_current_rankings()
     profiles = simulate_tournament.build_team_profiles(matches, latest_rankings)
+    print(f"DEBUG France: {profiles.get('France', 'NOT FOUND')}")
+    print(f"DEBUG Curaçao: {profiles.get('Curaçao', 'NOT FOUND')}")
+    print(f"DEBUG matches shape: {matches.shape}")
     h2h_lookup = simulate_tournament.build_h2h_rates(matches)
     
     probabilities = simulate_tournament.build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
     )
-    st.write("Spain vs Australia:", probabilities.get(("Spain", "Australia")))
-    st.write("Australia vs Spain:", probabilities.get(("Australia", "Spain")))
-    st.write("Argentina vs Jordan:", probabilities.get(("Argentina", "Jordan")))
-    st.write("France vs Curaçao:", probabilities.get(("France", "Curaçao")))
+   
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}
