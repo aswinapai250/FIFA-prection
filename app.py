@@ -100,6 +100,7 @@ def run_simulation_pipeline():
     st.write("DEBUG Curaçao vs France:", probabilities.get(('Curaçao', 'France'), 'NOT FOUND'))
     test_features = simulate_tournament.build_feature_vector("France", "Curaçao", profiles, h2h_lookup, feature_columns)
     st.write("DEBUG France vs Curaçao feature vector:", list(zip(feature_columns, test_features)))
+    st.write("DEBUG raw model output:", simulate_tournament.get_win_proba(model, test_features))
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}
