@@ -34,6 +34,40 @@ TARGET_COLUMN = "label"
 TEST_YEAR = 2022
 
 
+def train_and_get_model():
+    data = pd.read_csv(INPUT_FILE)
+    data["year"] = pd.to_datetime(data["date"]).dt.year
+
+    train_data = data[data["year"] < TEST_YEAR]
+
+    x_train = train_data[FEATURE_COLUMNS]
+    y_train = train_data[TARGET_COLUMN]
+
+    model = XGBClassifier(
+        n_estimators=200,
+        max_depth=4,
+        learning_rate=0.05,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        eval_metric="logloss",
+        random_state=42,
+    )
+    calib_size = int(len(x_train) * 0.2)
+    x_calib = x_train.iloc[-calib_size:]
+    y_calib = y_train.iloc[-calib_size:]
+    x_fit = x_train.iloc[:-calib_size]
+    y_fit = y_train.iloc[:-calib_size]
+
+    model.fit(x_fit, y_fit)
+
+    calibrated_model = CalibratedClassifierCV(
+        FrozenEstimator(model), method="sigmoid"
+    )
+    calibrated_model.fit(x_calib, y_calib)
+
+    return calibrated_model, FEATURE_COLUMNS
+
+
 def main():
     data = pd.read_csv(INPUT_FILE)
     data["year"] = pd.to_datetime(data["date"]).dt.year

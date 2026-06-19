@@ -80,27 +80,18 @@ def run_simulation_pipeline():
     #merge_data.main()
     
     # Simulate tournament logic to get win probabilities
-    model = joblib.load(simulate_tournament.MODEL_FILE)
-    st.write("DEBUG model.classes_:", list(model.classes_))
-    feature_columns = joblib.load(simulate_tournament.FEATURE_COLUMNS_FILE)
-    st.write("DEBUG feature_columns:", feature_columns)
+    import train_model
+    model, feature_columns = train_model.train_and_get_model()
     
     matches = simulate_tournament.load_match_history()
     latest_rankings = simulate_tournament.load_current_rankings()
     profiles = simulate_tournament.build_team_profiles(matches, latest_rankings)
-    st.write("DEBUG France:", profiles.get('France', 'NOT FOUND'))
-    st.write("DEBUG Curaçao:", profiles.get('Curaçao', 'NOT FOUND'))
-    st.write("DEBUG matches shape:", matches.shape)
     h2h_lookup = simulate_tournament.build_h2h_rates(matches)
     
     probabilities = simulate_tournament.build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
     )
-    st.write("DEBUG France vs Curaçao:", probabilities.get(('France', 'Curaçao'), 'NOT FOUND'))
-    st.write("DEBUG Curaçao vs France:", probabilities.get(('Curaçao', 'France'), 'NOT FOUND'))
     test_features = simulate_tournament.build_feature_vector("France", "Curaçao", profiles, h2h_lookup, feature_columns)
-    st.write("DEBUG France vs Curaçao feature vector:", list(zip(feature_columns, test_features)))
-    st.write("DEBUG raw model output:", simulate_tournament.get_win_proba(model, test_features))
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}
