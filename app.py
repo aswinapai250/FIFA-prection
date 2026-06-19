@@ -83,6 +83,7 @@ def run_simulation_pipeline():
     model = joblib.load(simulate_tournament.MODEL_FILE)
     st.write("DEBUG model.classes_:", list(model.classes_))
     feature_columns = joblib.load(simulate_tournament.FEATURE_COLUMNS_FILE)
+    st.write("DEBUG feature_columns:", feature_columns)
     
     matches = simulate_tournament.load_match_history()
     latest_rankings = simulate_tournament.load_current_rankings()
@@ -97,6 +98,8 @@ def run_simulation_pipeline():
     )
     st.write("DEBUG France vs Curaçao:", probabilities.get(('France', 'Curaçao'), 'NOT FOUND'))
     st.write("DEBUG Curaçao vs France:", probabilities.get(('Curaçao', 'France'), 'NOT FOUND'))
+    test_features = simulate_tournament.build_feature_vector("France", "Curaçao", profiles, h2h_lookup, feature_columns)
+    st.write("DEBUG France vs Curaçao feature vector:", list(zip(feature_columns, test_features)))
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}
