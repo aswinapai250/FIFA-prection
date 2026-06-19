@@ -66,6 +66,11 @@ DEFAULT_PROFILE = {
     "win_rate_vs_top": 0.33,
 }
 
+def get_win_proba(model, features):
+    proba = model.predict_proba([features])[0]
+    classes = list(model.classes_)
+    win_index = classes.index(1)
+    return proba[win_index]
 
 def to_match_name(team):
     return MATCH_NAME_MAP.get(team, team)
@@ -200,9 +205,9 @@ def build_matchup_probabilities(model, feature_columns, profiles, h2h_lookup):
             features = build_feature_vector(
                 home_team, away_team, profiles, h2h_lookup, feature_columns
             )
-            home_prob = model.predict_proba([features])[0][1]
+            home_prob = get_win_proba(model, features)
             rev_features = build_feature_vector(away_team, home_team, profiles, h2h_lookup, feature_columns)
-            away_prob = 1 - model.predict_proba([rev_features])[0][1]
+            away_prob = 1 - get_win_proba(model, rev_features)
             p = (home_prob + away_prob) / 2
             p = 0.5 + (p - 0.5) * 0.75
             probabilities[(home_team, away_team)] = p
