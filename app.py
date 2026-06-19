@@ -81,6 +81,7 @@ def run_simulation_pipeline():
     
     # Simulate tournament logic to get win probabilities
     model = joblib.load(simulate_tournament.MODEL_FILE)
+    st.write("DEBUG model.classes_:", list(model.classes_))
     feature_columns = joblib.load(simulate_tournament.FEATURE_COLUMNS_FILE)
     
     matches = simulate_tournament.load_match_history()
