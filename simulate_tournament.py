@@ -350,6 +350,8 @@ def main():
     matches = load_match_history()
     latest_rankings = load_current_rankings()
     profiles = build_team_profiles(matches, latest_rankings)
+    for team in ["France", "England", "Curaçao", "Haiti"]:
+        print(f"{team}: {profiles.get(team, 'NOT FOUND')}")
     h2h_lookup = build_h2h_rates(matches)
     probabilities = build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
