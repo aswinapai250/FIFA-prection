@@ -60,7 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 4. Cache the simulation results for 24 hours using st.cache_data
-@st.cache_data(ttl=1)
+@st.cache_data(ttl=24 * 3600)
 def run_simulation_pipeline():
     import os
     os.environ["FOOTBALL_API_KEY"] = st.secrets["FOOTBALL_API_KEY"]
@@ -91,7 +91,6 @@ def run_simulation_pipeline():
     probabilities = simulate_tournament.build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
     )
-    test_features = simulate_tournament.build_feature_vector("France", "Curaçao", profiles, h2h_lookup, feature_columns)
     
     all_teams = [team for group in simulate_tournament.GROUPS.values() for team in group]
     win_counts = {team: 0 for team in all_teams}

@@ -212,10 +212,6 @@ def build_matchup_probabilities(model, feature_columns, profiles, h2h_lookup):
             p = 0.5 + (p - 0.5) * 0.75
             probabilities[(home_team, away_team)] = p
 
-
-
-    print(f"Curaçao vs France: {probabilities.get(('Curaçao', 'France'), 'NOT FOUND'):.4f}")
-    print(f"France vs Curaçao: {probabilities.get(('France', 'Curaçao'), 'NOT FOUND'):.4f}")
     return probabilities
 
 
@@ -355,8 +351,6 @@ def main():
     matches = load_match_history()
     latest_rankings = load_current_rankings()
     profiles = build_team_profiles(matches, latest_rankings)
-    for team in ["France", "England", "Curaçao", "Haiti"]:
-        print(f"{team}: {profiles.get(team, 'NOT FOUND')}")
     h2h_lookup = build_h2h_rates(matches)
     probabilities = build_matchup_probabilities(
         model, feature_columns, profiles, h2h_lookup
