@@ -86,9 +86,9 @@ def run_simulation_pipeline():
     matches = simulate_tournament.load_match_history()
     latest_rankings = simulate_tournament.load_current_rankings()
     profiles = simulate_tournament.build_team_profiles(matches, latest_rankings)
-    print(f"DEBUG France: {profiles.get('France', 'NOT FOUND')}")
-    print(f"DEBUG Curaçao: {profiles.get('Curaçao', 'NOT FOUND')}")
-    print(f"DEBUG matches shape: {matches.shape}")
+    st.write("DEBUG France:", profiles.get('France', 'NOT FOUND'))
+    st.write("DEBUG Curaçao:", profiles.get('Curaçao', 'NOT FOUND'))
+    st.write("DEBUG matches shape:", matches.shape)
     h2h_lookup = simulate_tournament.build_h2h_rates(matches)
     
     probabilities = simulate_tournament.build_matchup_probabilities(
