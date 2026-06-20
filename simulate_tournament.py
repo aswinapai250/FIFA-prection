@@ -1,3 +1,4 @@
+import copy
 import itertools
 from collections import defaultdict
 
@@ -248,7 +249,16 @@ def simulate_knockout_match(home_team, away_team, probabilities):
 
 def init_group_table(teams):
     return {
-        team: {"points": 0, "gf": 0, "ga": 0, "gd": 0}
+        team: {
+            "points": 0,
+            "gf": 0,
+            "ga": 0,
+            "gd": 0,
+            "mp": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+        }
         for team in teams
     }
 
@@ -259,13 +269,22 @@ def update_group_table(table, home_team, away_team, home_goals, away_goals, resu
     table[away_team]["gf"] += away_goals
     table[away_team]["ga"] += home_goals
 
+    table[home_team]["mp"] += 1
+    table[away_team]["mp"] += 1
+
     if result == "home":
         table[home_team]["points"] += 3
+        table[home_team]["w"] += 1
+        table[away_team]["l"] += 1
     elif result == "away":
         table[away_team]["points"] += 3
+        table[away_team]["w"] += 1
+        table[home_team]["l"] += 1
     else:
         table[home_team]["points"] += 1
         table[away_team]["points"] += 1
+        table[home_team]["d"] += 1
+        table[away_team]["d"] += 1
 
     for team in (home_team, away_team):
         table[team]["gd"] = table[team]["gf"] - table[team]["ga"]
@@ -289,12 +308,15 @@ def third_place_rank_key(entry):
 
 
 def simulate_group_stage(probabilities):
+    real_group_tables, played_matches = build_real_group_state()
     group_tables = {}
     group_order = {}
 
     for group_name, teams in GROUPS.items():
-        table = init_group_table(teams)
+        table = real_group_tables[group_name]
         for home_team, away_team in itertools.combinations(teams, 2):
+            if (home_team, away_team) in played_matches or (away_team, home_team) in played_matches:
+                continue
             home_goals, away_goals, result = simulate_group_match(
                 home_team, away_team, probabilities
             )
@@ -321,6 +343,68 @@ def simulate_group_stage(probabilities):
     return qualifiers
 
 
+_REAL_GROUP_STATE_CACHE = None
+
+
+def build_real_group_state():
+    global _REAL_GROUP_STATE_CACHE
+    if _REAL_GROUP_STATE_CACHE is not None:
+        group_tables, played_matches = _REAL_GROUP_STATE_CACHE
+        return copy.deepcopy(group_tables), played_matches.copy()
+
+    matches = pd.read_csv(MATCHES_FILE)
+    real_2026 = matches[
+        (matches["year"] == 2026) & 
+        matches["winner"].notna() & 
+        (matches["winner"] != "")
+    ]
+    
+    total_found = len(real_2026)
+    matched_count = 0
+    
+    group_tables = {}
+    played_matches = set()
+    
+    for group_name, teams in GROUPS.items():
+        table = init_group_table(teams)
+        match_to_team = {to_match_name(team): team for team in teams}
+        group_match_names = set(match_to_team.keys())
+        
+        for row in real_2026.itertuples():
+            if row.home_team in group_match_names and row.away_team in group_match_names:
+                home_team = match_to_team[row.home_team]
+                away_team = match_to_team[row.away_team]
+                
+                update_group_table(
+                    table,
+                    home_team,
+                    away_team,
+                    int(row.home_goals),
+                    int(row.away_goals),
+                    row.winner
+                )
+                played_matches.add((home_team, away_team))
+                matched_count += 1
+                
+        group_tables[group_name] = table
+        
+    print(f"Found {total_found} real 2026 matches. Matched {matched_count} to groups.")
+    _REAL_GROUP_STATE_CACHE = (group_tables, played_matches)
+    return copy.deepcopy(group_tables), played_matches.copy()
+
+
+def get_groups_with_remaining_matches():
+    group_tables, played_matches = build_real_group_state()
+    remaining = {}
+    for group_name, teams in GROUPS.items():
+        remaining_matches = []
+        for home_team, away_team in itertools.combinations(teams, 2):
+            if (home_team, away_team) not in played_matches and (away_team, home_team) not in played_matches:
+                remaining_matches.append((home_team, away_team))
+        remaining[group_name] = remaining_matches
+    return remaining
+
+
 def simulate_knockout_round(teams, probabilities):
     current = teams[:]
     while len(current) > 1:
@@ -345,8 +429,8 @@ def main():
     # wc_features_ranked.csv is the modelling dataset; match history comes from wc_all_matches.csv
     pd.read_csv(FEATURES_FILE)
 
-    model = joblib.load(MODEL_FILE)
-    feature_columns = joblib.load(FEATURE_COLUMNS_FILE)
+    import train_model
+    model, feature_columns = train_model.train_and_get_model()
 
     matches = load_match_history()
     latest_rankings = load_current_rankings()
@@ -381,4 +465,10 @@ def main():
 
 
 if __name__ == "__main__":
+    group_tables, played_matches = build_real_group_state()
+    for group_name, table in group_tables.items():
+        print(f"\nGroup {group_name}:")
+        for team in sort_group_table(table):
+            stats = table[team]
+            print(f"  {team:<25} pts={stats['points']} gd={stats['gd']:+d}")
     main()
