@@ -152,15 +152,15 @@ def run_simulation_pipeline():
     ]
     results = sorted(results, key=lambda x: x["probability"], reverse=True)
     
-    group_tables, played_matches = simulate_tournament.build_real_group_state()
+    group_tables, played_matches, h2h_results = simulate_tournament.build_real_group_state()
     remaining_matches = simulate_tournament.get_groups_with_remaining_matches()
     
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    return results, probabilities, timestamp, all_teams, group_tables, remaining_matches
+    return results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results
 
 # 1. On load, run pipeline using st.spinner
 with st.spinner("Running simulation pipeline (fetching new matches, merging datasets, and running tournament simulation)..."):
-    results, probabilities, timestamp, all_teams, group_tables, remaining_matches = run_simulation_pipeline()
+    results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results = run_simulation_pipeline()
 
 # Layout
 # Header layout with logo and title
@@ -419,7 +419,7 @@ tabs = st.tabs([f"Group {g}" for g in groups_keys])
 for tab, group_name in zip(tabs, groups_keys):
     with tab:
         table = group_tables[group_name]
-        sorted_teams = simulate_tournament.sort_group_table(table)
+        sorted_teams = simulate_tournament.sort_group_table(table, h2h_results)
         
         # Build custom styled HTML table
         table_html = """

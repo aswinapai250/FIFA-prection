@@ -290,8 +290,10 @@ def update_group_table(table, home_team, away_team, home_goals, away_goals, resu
         table[team]["gd"] = table[team]["gf"] - table[team]["ga"]
 
 
-def sort_group_table(table):
-    return sorted(
+def sort_group_table(table, h2h_results=None):
+    """Sort group table by (points, gd, gf) descending, then break ties
+    between adjacent teams using head-to-head results when available."""
+    sorted_teams = sorted(
         table.keys(),
         key=lambda team: (
             table[team]["points"],
@@ -301,6 +303,28 @@ def sort_group_table(table):
         reverse=True,
     )
 
+    # Post-sort pass: swap adjacent pairs that are fully tied on (pts, gd, gf)
+    # but have a head-to-head winner.
+    if h2h_results:
+        changed = True
+        while changed:
+            changed = False
+            for i in range(len(sorted_teams) - 1):
+                a = sorted_teams[i]
+                b = sorted_teams[i + 1]
+                stats_a = (table[a]["points"], table[a]["gd"], table[a]["gf"])
+                stats_b = (table[b]["points"], table[b]["gd"], table[b]["gf"])
+                if stats_a != stats_b:
+                    continue
+                # Check h2h — dict keys are (team_a, team_b) with sorted names
+                pair_key = (a, b) if (a, b) in h2h_results else (b, a)
+                winner = h2h_results.get(pair_key)
+                if winner == b:
+                    sorted_teams[i], sorted_teams[i + 1] = b, a
+                    changed = True
+
+    return sorted_teams
+
 
 def third_place_rank_key(entry):
     group, team, stats = entry
@@ -308,7 +332,7 @@ def third_place_rank_key(entry):
 
 
 def simulate_group_stage(probabilities):
-    real_group_tables, played_matches = build_real_group_state()
+    real_group_tables, played_matches, h2h_results = build_real_group_state()
     group_tables = {}
     group_order = {}
 
@@ -321,9 +345,12 @@ def simulate_group_stage(probabilities):
                 home_team, away_team, probabilities
             )
             update_group_table(table, home_team, away_team, home_goals, away_goals, result)
+            h2h_results[(home_team, away_team)] = _h2h_winner_from_result(
+                home_team, away_team, result
+            )
 
         group_tables[group_name] = table
-        group_order[group_name] = sort_group_table(table)
+        group_order[group_name] = sort_group_table(table, h2h_results)
 
     third_place = []
     for group_name, ordered in group_order.items():
@@ -346,11 +373,25 @@ def simulate_group_stage(probabilities):
 _REAL_GROUP_STATE_CACHE = None
 
 
+def _h2h_winner_from_result(home_team, away_team, result):
+    """Return the winner's name from a match result, or None for draws."""
+    if result == "home":
+        return home_team
+    elif result == "away":
+        return away_team
+    return None
+
+
 def build_real_group_state():
+    """Returns (group_tables, played_matches, h2h_results).
+    
+    h2h_results maps (team_a, team_b) tuples to the winner's name
+    (or None if drawn / not played).
+    """
     global _REAL_GROUP_STATE_CACHE
     if _REAL_GROUP_STATE_CACHE is not None:
-        group_tables, played_matches = _REAL_GROUP_STATE_CACHE
-        return copy.deepcopy(group_tables), played_matches.copy()
+        group_tables, played_matches, h2h_results = _REAL_GROUP_STATE_CACHE
+        return copy.deepcopy(group_tables), played_matches.copy(), copy.deepcopy(h2h_results)
 
     matches = pd.read_csv(MATCHES_FILE)
     real_2026 = matches[
@@ -364,6 +405,7 @@ def build_real_group_state():
     
     group_tables = {}
     played_matches = set()
+    h2h_results = {}
     
     for group_name, teams in GROUPS.items():
         table = init_group_table(teams)
@@ -384,17 +426,20 @@ def build_real_group_state():
                     row.winner
                 )
                 played_matches.add((home_team, away_team))
+                h2h_results[(home_team, away_team)] = _h2h_winner_from_result(
+                    home_team, away_team, row.winner
+                )
                 matched_count += 1
                 
         group_tables[group_name] = table
         
     print(f"Found {total_found} real 2026 matches. Matched {matched_count} to groups.")
-    _REAL_GROUP_STATE_CACHE = (group_tables, played_matches)
-    return copy.deepcopy(group_tables), played_matches.copy()
+    _REAL_GROUP_STATE_CACHE = (group_tables, played_matches, h2h_results)
+    return copy.deepcopy(group_tables), played_matches.copy(), copy.deepcopy(h2h_results)
 
 
 def get_groups_with_remaining_matches():
-    group_tables, played_matches = build_real_group_state()
+    group_tables, played_matches, _h2h = build_real_group_state()
     remaining = {}
     for group_name, teams in GROUPS.items():
         remaining_matches = []
@@ -465,10 +510,10 @@ def main():
 
 
 if __name__ == "__main__":
-    group_tables, played_matches = build_real_group_state()
+    group_tables, played_matches, h2h_results = build_real_group_state()
     for group_name, table in group_tables.items():
         print(f"\nGroup {group_name}:")
-        for team in sort_group_table(table):
+        for team in sort_group_table(table, h2h_results):
             stats = table[team]
             print(f"  {team:<25} pts={stats['points']} gd={stats['gd']:+d}")
     main()
