@@ -331,26 +331,44 @@ def third_place_rank_key(entry):
     return (stats["points"], stats["gd"], stats["gf"])
 
 
+_printed_group_status = False
+
+
 def simulate_group_stage(probabilities):
+    global _printed_group_status
     real_group_tables, played_matches, h2h_results = build_real_group_state()
+    remaining = get_groups_with_remaining_matches()
     group_tables = {}
     group_order = {}
 
+    locked_groups = []
+    simulated_groups = []
+
     for group_name, teams in GROUPS.items():
         table = real_group_tables[group_name]
-        for home_team, away_team in itertools.combinations(teams, 2):
-            if (home_team, away_team) in played_matches or (away_team, home_team) in played_matches:
-                continue
-            home_goals, away_goals, result = simulate_group_match(
-                home_team, away_team, probabilities
-            )
-            update_group_table(table, home_team, away_team, home_goals, away_goals, result)
-            h2h_results[(home_team, away_team)] = _h2h_winner_from_result(
-                home_team, away_team, result
-            )
+        group_rem_matches = remaining.get(group_name, [])
 
-        group_tables[group_name] = table
-        group_order[group_name] = sort_group_table(table, h2h_results)
+        if len(group_rem_matches) == 0:
+            locked_groups.append(group_name)
+            group_tables[group_name] = table
+            group_order[group_name] = sort_group_table(table, h2h_results)
+        else:
+            simulated_groups.append(group_name)
+            for home_team, away_team in group_rem_matches:
+                home_goals, away_goals, result = simulate_group_match(
+                    home_team, away_team, probabilities
+                )
+                update_group_table(table, home_team, away_team, home_goals, away_goals, result)
+                h2h_results[(home_team, away_team)] = _h2h_winner_from_result(
+                    home_team, away_team, result
+                )
+            group_tables[group_name] = table
+            group_order[group_name] = sort_group_table(table, h2h_results)
+
+    if not _printed_group_status:
+        print(f"Locked groups (no simulation needed): {', '.join(locked_groups)}")
+        print(f"Simulated groups (had remaining matches): {', '.join(simulated_groups)}")
+        _printed_group_status = True
 
     third_place = []
     for group_name, ordered in group_order.items():
@@ -368,6 +386,7 @@ def simulate_group_stage(probabilities):
     qualifiers.extend(best_third)
 
     return qualifiers
+
 
 
 _REAL_GROUP_STATE_CACHE = None
@@ -463,12 +482,98 @@ def simulate_knockout_round(teams, probabilities):
     return current[0]
 
 
+_REAL_KNOCKOUT_FIXTURES_CACHE = None
+
+
+def get_real_knockout_fixtures():
+    global _REAL_KNOCKOUT_FIXTURES_CACHE
+    if _REAL_KNOCKOUT_FIXTURES_CACHE is not None:
+        return copy.deepcopy(_REAL_KNOCKOUT_FIXTURES_CACHE)
+
+    wc_matches_path = os.path.join(_DIR, "wc_matches.csv")
+    df = pd.read_csv(wc_matches_path)
+    df_last_32 = df[df["stage"] == "LAST_32"]
+
+    match_to_group = {to_match_name(team): team for group in GROUPS.values() for team in group}
+
+    fixtures = []
+    confirmed_count = 0
+    undetermined_count = 0
+
+    for row in df_last_32.itertuples():
+        home = row.home_team
+        away = row.away_team
+
+        home_name = None
+        if isinstance(home, str) and not pd.isna(home) and home.strip() != "":
+            home_name = match_to_group.get(home, home)
+
+        away_name = None
+        if isinstance(away, str) and not pd.isna(away) and away.strip() != "":
+            away_name = match_to_group.get(away, away)
+
+        fixtures.append({
+            "date": row.date,
+            "home_team": home_name,
+            "away_team": away_name
+        })
+
+        if home_name is not None and away_name is not None:
+            confirmed_count += 1
+        else:
+            undetermined_count += 1
+
+    print(f"LAST_32 slots: {confirmed_count} fully confirmed, {undetermined_count} partially/fully undetermined")
+
+    _REAL_KNOCKOUT_FIXTURES_CACHE = fixtures
+    return copy.deepcopy(fixtures)
+
+
 def simulate_tournament(probabilities):
+    # 1. Get the real knockout fixtures list
+    fixtures = get_real_knockout_fixtures()
+
+    # 2. Get the simulated qualifiers (32 team names, in their existing group_winner/runner_up/third_place order)
     qualifiers = simulate_group_stage(probabilities)
-    bracket = qualifiers[:]
-    RNG.shuffle(bracket)
-    
+
+    # 3. Construct the hybrid bracket:
+    # Confirmed real fixtures are used exactly, while undetermined slots use best-effort 
+    # simulated qualifier assignment since FIFA's official 495-combination third-place 
+    # mapping table isn't available as structured data.
+    bracket = [None] * 32
+    placed_teams = set()
+
+    # First pass: Place all confirmed real teams in their fixed slots
+    for i, fixture in enumerate(fixtures):
+        home = fixture["home_team"]
+        away = fixture["away_team"]
+        if home is not None:
+            bracket[2 * i] = home
+            placed_teams.add(home)
+        if away is not None:
+            bracket[2 * i + 1] = away
+            placed_teams.add(away)
+
+    # Find leftover qualifiers (those in qualifiers that are not in placed_teams)
+    leftover_qualifiers = [q for q in qualifiers if q not in placed_teams]
+
+    # Second pass: Fill undetermined (None) slots with leftover qualifiers in order
+    leftover_idx = 0
+    for j in range(32):
+        if bracket[j] is None:
+            if leftover_idx < len(leftover_qualifiers):
+                bracket[j] = leftover_qualifiers[leftover_idx]
+                leftover_idx += 1
+            else:
+                # Fallback if leftover list is exhausted (should not happen normally)
+                for q in qualifiers:
+                    if q not in bracket:
+                        bracket[j] = q
+                        break
+
+    # 4. Run simulate_knockout_round using this hybrid bracket
     return simulate_knockout_round(bracket, probabilities)
+
 
 def main():
     # wc_features_ranked.csv is the modelling dataset; match history comes from wc_all_matches.csv
