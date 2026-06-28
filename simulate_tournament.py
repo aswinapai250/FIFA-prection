@@ -529,6 +529,77 @@ def get_real_knockout_fixtures():
     return copy.deepcopy(fixtures)
 
 
+def predict_full_bracket(probabilities):
+    # 1. Get the 32 qualifiers using simulate_group_stage()
+    qualifiers = simulate_group_stage(probabilities)
+
+    # 2. Build the R32 matchups the same way simulate_tournament() does
+    fixtures = get_real_knockout_fixtures()
+    bracket = [None] * 32
+    placed_teams = set()
+
+    # First pass: Place all confirmed real teams in their fixed slots
+    for i, fixture in enumerate(fixtures):
+        home = fixture["home_team"]
+        away = fixture["away_team"]
+        if home is not None:
+            bracket[2 * i] = home
+            placed_teams.add(home)
+        if away is not None:
+            bracket[2 * i + 1] = away
+            placed_teams.add(away)
+
+    # Find leftover qualifiers
+    leftover_qualifiers = [q for q in qualifiers if q not in placed_teams]
+
+    # Second pass: Fill undetermined slots with leftover qualifiers
+    leftover_idx = 0
+    for j in range(32):
+        if bracket[j] is None:
+            if leftover_idx < len(leftover_qualifiers):
+                bracket[j] = leftover_qualifiers[leftover_idx]
+                leftover_idx += 1
+            else:
+                for q in qualifiers:
+                    if q not in bracket:
+                        bracket[j] = q
+                        break
+
+    # 3. For each round starting with R32
+    round_names = ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Final"]
+    rounds = []
+    current_teams = bracket[:]
+
+    for round_name in round_names:
+        round_matches = []
+        next_teams = []
+        for index in range(0, len(current_teams), 2):
+            team_a = current_teams[index]
+            team_b = current_teams[index + 1]
+
+            prob_a = probabilities[(team_a, team_b)]
+            prob_b = probabilities.get((team_b, team_a), 1.0 - prob_a)
+
+            winner = team_a if prob_a >= 0.5 else team_b
+
+            match_dict = {
+                "round": round_name,
+                "team_a": team_a,
+                "team_b": team_b,
+                "prob_a": prob_a,
+                "prob_b": prob_b,
+                "winner": winner
+            }
+            round_matches.append(match_dict)
+            next_teams.append(winner)
+
+        rounds.append(round_matches)
+        current_teams = next_teams
+
+    champion = current_teams[0]
+    return rounds, champion
+
+
 def simulate_tournament(probabilities):
     # 1. Get the real knockout fixtures list
     fixtures = get_real_knockout_fixtures()

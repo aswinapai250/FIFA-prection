@@ -143,8 +143,8 @@ def run_simulation_pipeline():
     win_counts = {team: 0 for team in all_teams}
     
     for _ in range(simulate_tournament.SIMULATIONS):
-        champion = simulate_tournament.simulate_tournament(probabilities)
-        win_counts[champion] += 1
+        champ = simulate_tournament.simulate_tournament(probabilities)
+        win_counts[champ] += 1
         
     results = [
         {"team": team, "wins": wins, "probability": wins / simulate_tournament.SIMULATIONS * 100}
@@ -152,15 +152,18 @@ def run_simulation_pipeline():
     ]
     results = sorted(results, key=lambda x: x["probability"], reverse=True)
     
+    # Get the deterministic full bracket
+    rounds, champion = simulate_tournament.predict_full_bracket(probabilities)
+    
     group_tables, played_matches, h2h_results = simulate_tournament.build_real_group_state()
     remaining_matches = simulate_tournament.get_groups_with_remaining_matches()
     
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    return results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results
+    return results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results, rounds, champion
 
 # 1. On load, run pipeline using st.spinner
 with st.spinner("Running simulation pipeline (fetching new matches, merging datasets, and running tournament simulation)..."):
-    results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results = run_simulation_pipeline()
+    results, probabilities, timestamp, all_teams, group_tables, remaining_matches, h2h_results, rounds, champion = run_simulation_pipeline()
 
 # Layout
 # Header layout with logo and title
@@ -173,145 +176,212 @@ with title_col:
     # 5. Show last updated timestamp
     st.markdown(f'<div class="subtitle" style="margin-bottom: 1.5rem;">Live match data fetched & 10,000 tournament simulations executed • Last Updated: <b>{timestamp}</b></div>', unsafe_allow_html=True)
 
-col1, col2 = st.columns([5, 4], gap="large")
+# Road to the Final section
+st.markdown('<div class="predictor-header" style="margin-top: 1rem;">Road to the Final</div>', unsafe_allow_html=True)
 
-with col1:
-    st.markdown('<div class="predictor-header">Tournament Win Probabilities</div>', unsafe_allow_html=True)
+# Big Predicted Champion Header Card
+st.markdown(f"""
+<div class="metric-card" style="text-align: center; border: 1.5px solid #C9A227; background: #181814; box-shadow: 0 4px 20px rgba(201, 162, 39, 0.15); margin-bottom: 2rem;">
+    <h3 style="margin: 0; color: #8A8A85; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Predicted Champion</h3>
+    <h1 style="margin: 0.5rem 0 0 0; font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #C9A227, #E8C766); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{champion}</h1>
+</div>
+""", unsafe_allow_html=True)
+
+for round_matches in rounds:
+    round_name = round_matches[0]["round"]
+    st.markdown(f'<div class="predictor-header" style="margin-top: 2rem; font-size: 1.25rem;">{round_name}</div>', unsafe_allow_html=True)
     
-    # Prepare top 20 data for plotting
-    df_results = pd.DataFrame(results).head(20)
-    
-    # 2. Shows a bar chart of top 20 teams using plotly
-    fig = px.bar(
-        df_results,
-        x="probability",
-        y="team",
-        orientation="h",
-        text=df_results["probability"].round(1).astype(str) + "%",
-    )
-    
-    fig.update_traces(
-        marker_color="#C9A227",
-        textposition="outside",
-        cliponaxis=False,
-        hoverinfo="skip",
-        hovertemplate=None,
-    )
-    
-    fig.update_layout(
-        yaxis={"categoryorder": "total ascending", "fixedrange": True},
-        xaxis={"fixedrange": True},
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        font_color="#ffffff",
-        margin=dict(l=0, r=40, t=10, b=0),
-        height=600,
-        dragmode=False,
-        bargap=0.3,
-        hovermode=False,
-    )
-    
-    fig.update_xaxes(
-        showgrid=False,
-        zeroline=False,
-        showticklabels=False,
-        title_text="",
-    )
-    fig.update_yaxes(
-        showgrid=False,
-        zeroline=False,
-        title_text="",
-    )
-    
-    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False, "scrollZoom": False, "doubleClick": False})
-with col2:
-    # 3. Match Predictor section
-    st.markdown('<div class="predictor-header">Head-to-Head Match Predictor</div>', unsafe_allow_html=True)
-    
-    st.markdown("""
-    Select any two teams qualified for the 2026 World Cup to calculate their direct matchup probabilities 
-    based on historical matchups, form profiles, and current rankings.
-    """)
-    
-    sorted_teams = sorted(all_teams)
-    
-    # Ensure default picks are different
-    default_a = "Argentina" if "Argentina" in sorted_teams else sorted_teams[0]
-    default_b = "Spain" if "Spain" in sorted_teams else sorted_teams[1]
-    
-    idx_a = sorted_teams.index(default_a)
-    idx_b = sorted_teams.index(default_b)
-    
-    col_sel1, col_sel2 = st.columns(2)
-    with col_sel1:
-        team_a = st.selectbox("Team A", sorted_teams, index=idx_a)
-    with col_sel2:
-        team_b = st.selectbox("Team B", sorted_teams, index=idx_b)
-        
-    st.markdown('<div style="margin-top: 1.5rem;"></div>', unsafe_allow_html=True)
-    
-    if team_a == team_b:
-        st.info("Please select two different teams to compute head-to-head probabilities.")
+    num_matches = len(round_matches)
+    if num_matches >= 8:
+        num_cols = 4
+    elif num_matches == 4:
+        num_cols = 4
+    elif num_matches == 2:
+        num_cols = 2
     else:
-        # Retrieve matchup probability
-        p_a = probabilities.get((team_a, team_b), 0.5)
-        p_b = 1.0 - p_a
+        num_cols = 1
         
-        pct_a = p_a * 100
-        pct_b = p_b * 100
-        
-        # Display probabilities side-by-side
-        gold_gradient = "linear-gradient(90deg, #C9A227, #E8C766)"
-        silver_gradient = "linear-gradient(90deg, #555555, #888888)"
-
-        if pct_a >= pct_b:
-            color_a, color_b = "#E8C766", "#AAAAAA"
-            bar_a, bar_b = gold_gradient, silver_gradient
-        else:
-            color_a, color_b = "#AAAAAA", "#E8C766"
-            bar_a, bar_b = silver_gradient, gold_gradient
-
-        col_res1, col_res2 = st.columns(2)
-        with col_res1:
-            st.markdown(f"<h3 style='text-align: center; margin-bottom: 0;'>{team_a}</h3>", unsafe_allow_html=True)
-            st.markdown(f"<h1 style='text-align: center; color: {color_a}; margin-top: 0;'>{pct_a:.1f}%</h1>", unsafe_allow_html=True)
-        with col_res2:
-            st.markdown(f"<h3 style='text-align: center; margin-bottom: 0;'>{team_b}</h3>", unsafe_allow_html=True)
-            st.markdown(f"<h1 style='text-align: center; color: {color_b}; margin-top: 0;'>{pct_b:.1f}%</h1>", unsafe_allow_html=True)
-
-        st.markdown(f"""
-        <div style="display: flex; width: 100%; height: 28px; border-radius: 14px; overflow: hidden; background-color: #2c2c2e; font-family: 'Outfit', sans-serif; font-weight: 600; color: white; margin-top: 1rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-            <div style="width: {pct_a}%; background: {bar_a}; display: flex; align-items: center; justify-content: center; transition: width 0.6s ease; font-size: 0.95rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                {pct_a:.1f}%
+    if num_cols == 1:
+        mid_col_left, mid_col, mid_col_right = st.columns([1, 2, 1])
+        with mid_col:
+            m = round_matches[0]
+            team_a = m["team_a"]
+            team_b = m["team_b"]
+            prob_a = m["prob_a"]
+            prob_b = m["prob_b"]
+            winner = m["winner"]
+            
+            pct_a = prob_a * 100
+            pct_b = prob_b * 100
+            
+            gold_gradient = "linear-gradient(90deg, #C9A227, #E8C766)"
+            silver_gradient = "linear-gradient(90deg, #555555, #888888)"
+            
+            if winner == team_a:
+                color_a, color_b = "#E8C766", "#8A8A85"
+                font_weight_a, font_weight_b = "bold", "normal"
+                sub_color_a, sub_color_b = "#E8C766", "#8A8A85"
+                bar_a, bar_b = gold_gradient, silver_gradient
+            else:
+                color_a, color_b = "#8A8A85", "#E8C766"
+                font_weight_a, font_weight_b = "normal", "bold"
+                sub_color_a, sub_color_b = "#8A8A85", "#E8C766"
+                bar_a, bar_b = silver_gradient, gold_gradient
+                
+            st.markdown(f"""
+            <div class="metric-card" style="margin-bottom: 1rem; padding: 1.2rem; border-color: #2A2A2A;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="text-align: left; flex: 1;">
+                        <div style="font-size: 1.1rem; font-weight: {font_weight_a}; color: {color_a};">{team_a}</div>
+                        <div style="font-size: 0.9rem; color: {sub_color_a};">{pct_a:.1f}%</div>
+                    </div>
+                    <div style="text-align: center; font-size: 0.8rem; color: #555555; padding: 0 10px; font-weight: bold; text-transform: uppercase;">VS</div>
+                    <div style="text-align: right; flex: 1;">
+                        <div style="font-size: 1.1rem; font-weight: {font_weight_b}; color: {color_b};">{team_b}</div>
+                        <div style="font-size: 0.9rem; color: {sub_color_b};">{pct_b:.1f}%</div>
+                    </div>
+                </div>
+                <div style="display: flex; width: 100%; height: 6px; border-radius: 3px; overflow: hidden; background-color: #2c2c2e;">
+                    <div style="width: {pct_a}%; background: {bar_a};"></div>
+                    <div style="width: {pct_b}%; background: {bar_b};"></div>
+                </div>
             </div>
-            <div style="width: {pct_b}%; background: {bar_b}; display: flex; align-items: center; justify-content: center; transition: width 0.6s ease; font-size: 0.95rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                {pct_b:.1f}%
-            </div>
+            """, unsafe_allow_html=True)
+    else:
+        cols = st.columns(num_cols)
+        for idx, m in enumerate(round_matches):
+            col_idx = idx % num_cols
+            with cols[col_idx]:
+                team_a = m["team_a"]
+                team_b = m["team_b"]
+                prob_a = m["prob_a"]
+                prob_b = m["prob_b"]
+                winner = m["winner"]
+                
+                pct_a = prob_a * 100
+                pct_b = prob_b * 100
+                
+                gold_gradient = "linear-gradient(90deg, #C9A227, #E8C766)"
+                silver_gradient = "linear-gradient(90deg, #555555, #888888)"
+                
+                if winner == team_a:
+                    color_a, color_b = "#E8C766", "#8A8A85"
+                    font_weight_a, font_weight_b = "bold", "normal"
+                    sub_color_a, sub_color_b = "#E8C766", "#8A8A85"
+                    bar_a, bar_b = gold_gradient, silver_gradient
+                else:
+                    color_a, color_b = "#8A8A85", "#E8C766"
+                    font_weight_a, font_weight_b = "normal", "bold"
+                    sub_color_a, sub_color_b = "#8A8A85", "#E8C766"
+                    bar_a, bar_b = silver_gradient, gold_gradient
+                    
+                st.markdown(f"""
+                <div class="metric-card" style="margin-bottom: 1rem; padding: 1.2rem; border-color: #2A2A2A;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <div style="text-align: left; flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: {font_weight_a}; color: {color_a};">{team_a}</div>
+                            <div style="font-size: 0.9rem; color: {sub_color_a};">{pct_a:.1f}%</div>
+                        </div>
+                        <div style="text-align: center; font-size: 0.8rem; color: #555555; padding: 0 10px; font-weight: bold; text-transform: uppercase;">VS</div>
+                        <div style="text-align: right; flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: {font_weight_b}; color: {color_b};">{team_b}</div>
+                            <div style="font-size: 0.9rem; color: {sub_color_b};">{pct_b:.1f}%</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; width: 100%; height: 6px; border-radius: 3px; overflow: hidden; background-color: #2c2c2e;">
+                        <div style="width: {pct_a}%; background: {bar_a};"></div>
+                        <div style="width: {pct_b}%; background: {bar_b};"></div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+# Head-to-Head Match Predictor section
+st.markdown('<div class="predictor-header" style="margin-top: 2rem;">Head-to-Head Match Predictor</div>', unsafe_allow_html=True)
+
+st.markdown("""
+Select any two teams qualified for the 2026 World Cup to calculate their direct matchup probabilities 
+based on historical matchups, form profiles, and current rankings.
+""")
+
+sorted_teams = sorted(all_teams)
+
+# Ensure default picks are different
+default_a = "Argentina" if "Argentina" in sorted_teams else sorted_teams[0]
+default_b = "Spain" if "Spain" in sorted_teams else sorted_teams[1]
+
+idx_a = sorted_teams.index(default_a)
+idx_b = sorted_teams.index(default_b)
+
+col_sel1, col_sel2 = st.columns(2)
+with col_sel1:
+    team_a = st.selectbox("Team A", sorted_teams, index=idx_a)
+with col_sel2:
+    team_b = st.selectbox("Team B", sorted_teams, index=idx_b)
+    
+st.markdown('<div style="margin-top: 1.5rem;"></div>', unsafe_allow_html=True)
+
+if team_a == team_b:
+    st.info("Please select two different teams to compute head-to-head probabilities.")
+else:
+    # Retrieve matchup probability
+    p_a = probabilities.get((team_a, team_b), 0.5)
+    p_b = 1.0 - p_a
+    
+    pct_a = p_a * 100
+    pct_b = p_b * 100
+    
+    # Display probabilities side-by-side
+    gold_gradient = "linear-gradient(90deg, #C9A227, #E8C766)"
+    silver_gradient = "linear-gradient(90deg, #555555, #888888)"
+
+    if pct_a >= pct_b:
+        color_a, color_b = "#E8C766", "#AAAAAA"
+        bar_a, bar_b = gold_gradient, silver_gradient
+    else:
+        color_a, color_b = "#AAAAAA", "#E8C766"
+        bar_a, bar_b = silver_gradient, gold_gradient
+
+    col_res1, col_res2 = st.columns(2)
+    with col_res1:
+        st.markdown(f"<h3 style='text-align: center; margin-bottom: 0;'>{team_a}</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center; color: {color_a}; margin-top: 0;'>{pct_a:.1f}%</h1>", unsafe_allow_html=True)
+    with col_res2:
+        st.markdown(f"<h3 style='text-align: center; margin-bottom: 0;'>{team_b}</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center; color: {color_b}; margin-top: 0;'>{pct_b:.1f}%</h1>", unsafe_allow_html=True)
+
+    st.markdown(f"""
+    <div style="display: flex; width: 100%; height: 28px; border-radius: 14px; overflow: hidden; background-color: #2c2c2e; font-family: 'Outfit', sans-serif; font-weight: 600; color: white; margin-top: 1rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <div style="width: {pct_a}%; background: {bar_a}; display: flex; align-items: center; justify-content: center; transition: width 0.6s ease; font-size: 0.95rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            {pct_a:.1f}%
         </div>
-        """, unsafe_allow_html=True)
-        
-        # Display team quick stats/ranks from the simulator context
-        import simulate_tournament
-        rankings = simulate_tournament.load_current_rankings()
-        
-        rank_a = int(rankings.get(simulate_tournament.to_ranking_name(team_a), 100))
-        rank_b = int(rankings.get(simulate_tournament.to_ranking_name(team_b), 100))
-        
-        st.markdown(f"""
-        <div class="metric-card">
-            <h4 style="margin-top: 0; color: #F5F5F0; border-bottom: 1px solid #2A2A2A; padding-bottom: 0.5rem;">Quick Matchup Facts</h4>
-            <table style="width: 100%; color: #8A8A85; font-size: 0.95rem; line-height: 2;">
-                <tr>
-                    <td>FIFA World Ranking</td>
-                    <td style="text-align: right; color: #F5F5F0;"><b>{team_a}</b> (Rank {rank_a}) vs <b>{team_b}</b> (Rank {rank_b})</td>
-                </tr>
-                <tr>
-                    <td>Ranking Difference</td>
-                    <td style="text-align: right; color: #C9A227;"><b>{abs(rank_a - rank_b)} positions</b></td>
-                </tr>
-            </table>
+        <div style="width: {pct_b}%; background: {bar_b}; display: flex; align-items: center; justify-content: center; transition: width 0.6s ease; font-size: 0.95rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            {pct_b:.1f}%
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Display team quick stats/ranks from the simulator context
+    import simulate_tournament
+    rankings = simulate_tournament.load_current_rankings()
+    
+    rank_a = int(rankings.get(simulate_tournament.to_ranking_name(team_a), 100))
+    rank_b = int(rankings.get(simulate_tournament.to_ranking_name(team_b), 100))
+    
+    st.markdown(f"""
+    <div class="metric-card">
+        <h4 style="margin-top: 0; color: #F5F5F0; border-bottom: 1px solid #2A2A2A; padding-bottom: 0.5rem;">Quick Matchup Facts</h4>
+        <table style="width: 100%; color: #8A8A85; font-size: 0.95rem; line-height: 2;">
+            <tr>
+                <td>FIFA World Ranking</td>
+                <td style="text-align: right; color: #F5F5F0;"><b>{team_a}</b> (Rank {rank_a}) vs <b>{team_b}</b> (Rank {rank_b})</td>
+            </tr>
+            <tr>
+                <td>Ranking Difference</td>
+                <td style="text-align: right; color: #C9A227;"><b>{abs(rank_a - rank_b)} positions</b></td>
+            </tr>
+        </table>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Live Group Stage Standings section
 st.markdown('<div class="predictor-header" style="margin-top: 2rem;">Live Group Stage Standings</div>', unsafe_allow_html=True)
